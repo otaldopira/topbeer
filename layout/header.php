@@ -11,6 +11,17 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.mask.js"></script>
+    <script>        
+        $(document).ready(function(){
+            //Máscara CPF
+            $('#cpfUs').mask('000.000.000-00');
+            //Máscara celular
+            $('#telUs').mask('(00) 00000-0000');
+        });
+    </script>
 </head>
 <body>
     <!-- Cabeçalho  -->

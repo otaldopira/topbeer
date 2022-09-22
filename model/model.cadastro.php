@@ -4,7 +4,7 @@
 $addUser = array("NOME" => "Eric", "SOBRENOME" => "Silva", "CPF" => "10536569983", "CELULAR" => "42998143100", "EMAIL" => "ti@inovare.med.br", "SENHA" => "12345678");
 
 $usuarios = array(
-     array("NOME" => "Eric", "SOBRENOME" => "Silva", "CPF" => "10536569983", "CELULAR" => "42998143100", "EMAIL" => "ti@inovare.med.br", "SENHA" => "12345678"),
+     array("NOME" => "ADM", "SOBRENOME" => "ADM", "CPF" => "012345678910", "CELULAR" => "42998143100", "EMAIL" => "ti@inovare.med.br", "SENHA" => "12345678"),
      array("NOME" => "Eric", "SOBRENOME" => "Silva", "CPF" => "10536569983", "CELULAR" => "42998143100", "EMAIL" => "ti@inovare.med.br", "SENHA" => "12345678")
 );
 
