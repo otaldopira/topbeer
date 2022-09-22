@@ -1,7 +1,23 @@
 <?php
 
 
-    if(isset($_POST['submit'])){
+$addUser = array("NOME" => "Eric", "SOBRENOME" => "Silva", "CPF" => "10536569983", "CELULAR" => "42998143100", "EMAIL" => "ti@inovare.med.br", "SENHA" => "12345678");
+
+$usuarios = array(
+     array("NOME" => "Eric", "SOBRENOME" => "Silva", "CPF" => "10536569983", "CELULAR" => "42998143100", "EMAIL" => "ti@inovare.med.br", "SENHA" => "12345678"),
+     array("NOME" => "Eric", "SOBRENOME" => "Silva", "CPF" => "10536569983", "CELULAR" => "42998143100", "EMAIL" => "ti@inovare.med.br", "SENHA" => "12345678")
+);
+
+array_push($usuarios, $addUser);
+
+echo "<pre>";
+print_r($usuarios);
+echo "</pre>";
+
+function cadastrarUser()
+{
+
+     if (isset($_POST['submit'])) {
 
           $nomeUser = $_POST['nomeUser'];
           $sobrenomeUser = $_POST['sobrenomeUser'];
@@ -12,15 +28,12 @@
 
           var_dump($_POST['nomeUser']);
 
-          if(!empty($nomeUser) && !empty($sobrenomeUser) && !empty($cpfUser) && !empty($celularUser) && !empty($emailUser) && !empty($senhaUser)){
+          if (!empty($nomeUser) && !empty($sobrenomeUser) && !empty($cpfUser) && !empty($celularUser) && !empty($emailUser) && !empty($senhaUser)) {
 
-               if(!preg_match("/^[a-zA-Z-' ]*$/", $nomeUser)){
+               if (!preg_match("/^[a-zA-Z-' ]*$/", $nomeUser)) {
                     die('Caractere indisponível !');
                }
-
-               
-
-          }else{
+          } else {
                die('Obrigatório preencher todos os campos!');
           }
 
@@ -33,11 +46,8 @@
                'SENHA' => "$senhaUser"
           ];
 
-    }
-
-
-    
-
-    
-
-    
+          echo "<pre>";
+          print_r($usuarios);
+          echo "</pre>";
+     }
+}
