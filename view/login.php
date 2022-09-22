@@ -10,7 +10,7 @@
     <div class="login">
 
         <form action="">
-            <input type="email" placeholder="e-mail" class="box">
+            <input type="text" placeholder="CPF" class="box">
             <input type="password" placeholder="senha" class="box">
             <div class="form-btn">
                 <input type="submit" value="Entrar" class="btn">
