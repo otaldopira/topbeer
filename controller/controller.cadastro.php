@@ -1,6 +1,4 @@
 <?php
 
     require('../model/model.cadastro.php');
-    require('../view/register.php');
-
-    $cadUser -> cadastrarUser();
+    header('Location:../view/login.php');

@@ -52,12 +52,10 @@ if (isset($_POST['submit'])) {
           $tempD1 = (($d1 % 11) < 2) ? 0 : (11 - ($d1 % 11));
           $tempD2 = (($d2 % 11) < 2) ? 0 : (11 - ($d2 % 11));
 
-          if ($tempD1 == $cpfNoMask[9] && $tempD2 == $cpfNoMask[10]) {
-               echo ($cpf);
-          } else {
+          if (!$tempD1 == $cpfNoMask[9] && !$tempD2 == $cpfNoMask[10]) {
                $erro++;
                die("CPF INVÁLIDO!");
-          }
+          } 
 
           //VALIDANDO E-MAIL
           if (!filter_var($emailUser, FILTER_VALIDATE_EMAIL)) {

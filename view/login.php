@@ -9,11 +9,11 @@
 
     <div class="login">
 
-        <form action="">
-            <input type="text" placeholder="CPF" class="box">
-            <input type="password" placeholder="senha" class="box">
+        <form action="../controller/controller.login.php" method="POST">
+            <input type="text" placeholder="CPF" class="box" name="cpfUser" id="cpfUs">
+            <input type="password" name="passUs" placeholder="senha" class="box">
             <div class="form-btn">
-                <input type="submit" value="Entrar" class="btn">
+                <input type="submit" value="Entrar" class="btn" name="submit">
             </div>
             
         </form>
