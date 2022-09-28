@@ -1,10 +1,6 @@
 <?php
-    
-    require ('../layout/header.php');
+include('../layout/header.php');
 ?>
-
-    <!-- Sessão de cadastro de usuários  -->
-
 <section class="register" id="register">
 
     <h1 class="heading"> <span> cadastro </span> </h1>
@@ -31,9 +27,6 @@
     </div>
 
 </section>
-
 <?php
-    
-    require ('../layout/footer.php');
-
+include('../layout/footer.php');
 ?>

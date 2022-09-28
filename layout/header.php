@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar</title>
-
-    <!-- font awesome cdn link  -->
+    <title>TopBeer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <!-- custom css file link  -->
     <link rel="stylesheet" href="../css/style.css">
-
     <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
     <script type="text/javascript" src="../js/jquery.mask.js"></script>
+    <!-- JQuery Mask -->
     <script>        
         $(document).ready(function(){
             //Máscara CPF
@@ -24,23 +20,16 @@
     </script>
 </head>
 <body>
-    <!-- Cabeçalho  -->
-
+    
 <header>
-
-    <a href="#" class="logo">Top Beer<span>.</span></a>
-
+    <a href="../view/home.view.phps" class="logo">Top Beer<span>.</span></a>
     <nav class="navbar">
-        <a href="index.html">início</a>
-        <a href="products.html">produtos</a>
-        <a href="register.html">cadastro</a>
+        <a href="../view/home.view.php">início</a>
+        <a href="../view/produtos.view.php">produtos</a>
+        <a href="../view/cadastro.usuario.view.php">cadastro</a>
     </nav>
 
     <div class="icons">
-        <a href="#" class="fas fa-shopping-cart"></a>
-        <a href="#" class="fas fa-user"></a>
+        <a href="../view/login.view.php" class="fas fa-user"></a>
     </div>
-
 </header>
-
-<!-- Fim cabeçalho  -->

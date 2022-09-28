@@ -114,7 +114,14 @@ header .fa-bars{
 }
 
 .home .content{
-    max-width: 53rem;
+    padding: 2rem;
+    max-width: 60rem;
+    background: rgba(0, 116, 25, 0.4);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .home .content h3{
@@ -134,6 +141,7 @@ header .fa-bars{
     color:#999;
     padding:1rem 0;
     line-height: 1.5;
+    
 }
 
 .icons-container{

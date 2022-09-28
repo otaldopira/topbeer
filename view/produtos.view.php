@@ -12,22 +12,19 @@
     <div class="box-container">
 
         <div class="box">
-            <span class="discount">-10%</span>
-
             <div class="image">
-                <img src="images/img-1.jpg" alt="">
+                <img src="#" alt="">
                 
                 <div class="icons">
-                    <a href="#" class="fas fa-heart"></a>
-                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="#" class="cart-btn">Resgatar</a>
                     <a href="#" class="fas fa-share"></a>
                 </div>
                 
             </div>
 
             <div class="content">
-                <h3>flower pot</h3>
-                <div class="price"> $12.99 <span>$15.99</span> </div>
+                <h3>Heineken</h3>
+                <div class="price">R$12.99</div>
             </div>
 
         </div>

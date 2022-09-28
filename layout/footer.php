@@ -6,8 +6,8 @@
 
         <div class="box">
             <h3>acesso rápido</h3>
-            <a href="index.html">início</a>
-            <a href="products.html">produtos</a>
+            <a href="#">início</a>
+            <a href="#">produtos</a>
             <a href="#">cadastro</a>
         </div>
 
