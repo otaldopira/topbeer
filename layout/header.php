@@ -7,22 +7,10 @@
     <title>TopBeer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.mask.js"></script>
-    <!-- JQuery Mask -->
-    <script>        
-        $(document).ready(function(){
-            //Máscara CPF
-            $('#cpfUs').mask('000.000.000-00');
-            //Máscara celular
-            $('#telUs').mask('(00) 00000-0000');
-        });
-    </script>
 </head>
-<body>
-    
+<body>  
 <header>
-    <a href="../view/home.view.phps" class="logo">Top Beer<span>.</span></a>
+    <a href="../view/home.view.php" class="logo">Top Beer<span>.</span></a>
     <nav class="navbar">
         <a href="../view/home.view.php">início</a>
         <a href="../view/produtos.view.php">produtos</a>

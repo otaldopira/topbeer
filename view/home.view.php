@@ -1,5 +1,5 @@
 <?php
-include('../layout/header.php');
+include('../../layout/header.php');
 ?>
 
 <section class="home" id="home">
@@ -42,5 +42,5 @@ include('../layout/header.php');
 </section>
 
 <?php
-include('../layout/footer.php');
+include('../../layout/header.php');
 ?>
