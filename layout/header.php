@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(isset($_SESSION['logado']) || $_SESSION == true)
+        $nome = $_SESSION['nome'] ?? null;
+?>
+
 <!DOCTYPE html>
 <html lang="pt_BR">
 <head>
@@ -19,5 +25,8 @@
 
     <div class="icons">
         <a href="../view/login.view.php" class="fas fa-user"></a>
+        <?php if(!empty($nome)): ?>
+            <span><?php echo $nome ?></span>
+        <?php endif; ?>
     </div>
 </header>
