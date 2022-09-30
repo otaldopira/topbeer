@@ -1,6 +1,6 @@
 <?php
 
-require("layout/header.php");
+include('../layout/header.php');
 
 ?>
 
@@ -10,7 +10,7 @@ require("layout/header.php");
 
     <div class="login">
 
-        <form enctype="multipart/form-data" method="POST" action="../controller/controller.cadastro.produtos.php">
+        <form method="POST" action="../controller/cadastro.produto.controller.php">
             <input type="text" placeholder="nome" class="box" name="nomeProd">
             <input type="text" placeholder="marca" class="box" name="marcaProd">
             <select class="box" name="categoriaProd">
@@ -22,13 +22,21 @@ require("layout/header.php");
             <input type="number" placeholder="quantidade" class="box" name="quantProd">
             <input type="text" placeholder="preço" class="box" name="precoProd">
             <textarea class="box" placeholder="descrição" cols="10" rows="5" name="descricaoProd"></textarea>
-            <input name="foto-prod" type="file" class="box">
+            <input name="fotoProd" type="file" class="box">
             <label>*PNG, JPG, JPEG.</label><br>
 
             <div class="form-btn">
                 <input type="submit" name="submit" value="Cadastrar" class="btn">
                 <input type="reset" value="Limpar" class="btn">
             </div>
+
+            <?php if(isset($msn)):?>
+                <?php if($msn != 1): ?>
+                    <p><?php echo $msn ?></p>
+                <?php elseif($msn == 1):?>
+                    <p><?php echo 'Cadastro efetuado com sucesso!'?></p>
+                <?php endif; ?>           
+            <?php endif; ?>
 
         </form>
 
@@ -38,6 +46,6 @@ require("layout/header.php");
 
 <?php
 
-require('layout/footer.php');
+include('../layout/footer.php');
 
 ?>
