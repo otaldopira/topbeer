@@ -10,13 +10,17 @@
 
 
     function fazerLogin($usuarios, $cpf, $senha){
-        session_start();
         foreach ($usuarios as $id => $user) {
             if($user['CPF'] == $cpf && $user['SENHA'] == $senha) {
+                session_start();
                 $_SESSION['logado'] = true;
                 $_SESSION['cpf'] = $user['CPF'];
                 $_SESSION['nome'] = $user['NOME'];
+                return true;
+            }else{
+                return false;
             }
+
             
         }
     }

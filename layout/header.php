@@ -25,8 +25,11 @@
 
     <div class="icons">
         <a href="../view/login.view.php" class="fas fa-user"></a>
+        
         <?php if(!empty($nome)): ?>
-            <span><?php echo $nome ?></span>
+            <a href="../view/cadastro.produto.view.php" class="fas fa-cog"></a>
+            <a><?php echo $nome ?></a>
+            <a href="../controller/logout.controller.php">SAIR</a>
         <?php endif; ?>
     </div>
 </header>

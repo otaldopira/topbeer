@@ -4,7 +4,7 @@
 
     session_start();
     if(isset($_SESSION['logado']) || $_SESSION == true){
-        header('Location: ./produtos.view.php');
+        header('Location: ../view/produtos.view.php');
     }
 
 ?>

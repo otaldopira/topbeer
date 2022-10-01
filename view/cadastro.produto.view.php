@@ -1,6 +1,10 @@
 <?php
 
-include('../layout/header.php');
+    include('../layout/header.php');
+    if(!$_SESSION['logado']) {
+        header('Location: ../view/login.view.php');
+        exit();
+    }
 
 ?>
 
