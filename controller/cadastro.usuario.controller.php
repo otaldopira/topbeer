@@ -8,6 +8,7 @@
     $celularUser = $_POST['celularUser'];
     $emailUser = $_POST['emailUser'];
     $senhaUser = $_POST['senhaUser'];
+    $requesicao = $_POST['requisicao'];
 
     if (isset($_POST['submit'])) {
 
@@ -105,7 +106,7 @@
                         if(validaSenha($senhaUser) != 1)
                             $msn = 'Senha deve ter no mínimo 8 caracteres !';
                         else
-                            cadastraUsuario($nomeUser, $sobrenomeUser, $cpfUser, $celularUser, $emailUser, $senhaUser);
+                            cadastraUsuario($nomeUser, $sobrenomeUser, $cpfUser, $celularUser, $emailUser, $senhaUser, $requesicao, $usuarios);
 
 
     require('../view/cadastro.usuario.view.php');

@@ -81,7 +81,14 @@ header .navbar a:hover{
 }
 
 header .icons a{
-    font-size: 2.5rem;
+    font-size: 1.7rem;
+    color:#333;
+    margin-left: 1.5rem;
+}
+
+header .icons i{
+    font-style: normal;
+    font-size: 1.7rem;
     color:#333;
     margin-left: 1.5rem;
 }

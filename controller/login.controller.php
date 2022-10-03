@@ -1,6 +1,7 @@
 <?php
 
     require('../model/login.model.php');
+    require('../model/cadastro.model.php');
 
     $cpfUser = $_POST['cpfUser'];
     $senhaUser = $_POST['passUs'];
@@ -68,7 +69,9 @@
         if(validaCpf($cpfUser) != 1)
             $msn = 'CPF inválido !';
         else
-            fazerLogin($usuarios, $cpfUser, $senhaUser);
+            if(fazerLogin($usuarios ,$cpfUser, $senhaUser) != 1)
+                $msn = 'Login inválido !';
+            
 
     require('../view/login.view.php');
     

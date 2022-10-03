@@ -2,6 +2,7 @@
     session_start();
     if(isset($_SESSION['logado']) || $_SESSION == true)
         $nome = $_SESSION['nome'] ?? null;
+        $bebum = $_SESSION['bebumCoins'] ?? null;
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,8 @@
         
         <?php if(!empty($nome)): ?>
             <a href="../view/cadastro.produto.view.php" class="fas fa-cog"></a>
-            <a><?php echo $nome ?></a>
+            <i><?php echo $nome ?></i>
+            <i class="fas fa-wallet"><?php echo " " . $bebum ?></i>
             <a href="../controller/logout.controller.php">SAIR</a>
         <?php endif; ?>
     </div>

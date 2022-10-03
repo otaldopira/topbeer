@@ -1,5 +1,6 @@
 <?php
 include('../layout/header.php');
+
 ?>
 <section class="register" id="register">
 
@@ -10,10 +11,15 @@ include('../layout/header.php');
         <form action="../controller/cadastro.usuario.controller.php" method="POST">
             <input type="text" placeholder="nome" id="nameUs" class="box" name="nomeUser">
             <input type="text" placeholder="sobrenome" id="lastNameUs" class="box" name="sobrenomeUser">
-            <input type="text" placeholder="CPF" id="cpfUs" class="box" name="cpfUser">
+            <input type="number" placeholder="CPF" id="cpfUs" class="box" name="cpfUser">
             <input type="tel" placeholder="celular" id="telUs" class="box" name="celularUser">
             <input type="email" placeholder="e-mail" id="emailUs" class="box" name="emailUser">
             <input type="password" placeholder="senha" id="passUs" class="box" name="senhaUser">
+            <?php if(isset($_SESSION['nivelUser'])): ?>
+                <?php if($_SESSION['nivelUser'] == 'on'): ?>
+                    <label>ADM:<input type="checkbox" name="requisicao"></label>
+                <?php endif; ?>
+            <?php endif; ?>
             <div class="form-btn">
                 <input type="submit" value="Cadastrar" class="btn" name="submit">
             </div>

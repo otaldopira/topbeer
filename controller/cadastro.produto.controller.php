@@ -66,6 +66,6 @@
                     if(validaDescricao($descricaoProduto) != 1)
                         $msn = 'Descrição deve ter pelo menos 5 caracteres !';
                     else
-                        cadastraProduto($nomeProduto, $marcaProduto, $categoriaProduto, $quantidadeProduto, $precoProduto, $descricaoProduto, $fotoProduto);
+                        cadastraProduto($nomeProduto, $marcaProduto, $categoriaProduto, $quantidadeProduto, $precoProduto, $descricaoProduto, $fotoProduto, $produtos);
 
     require('../view/cadastro.produto.view.php');
