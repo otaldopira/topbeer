@@ -66,11 +66,8 @@
     if(validaCampoVazio($cpfUser, $senhaUser) != 1)
         $msn = 'Obrigatório preencher todos os campos !'; 
     else
-        if(validaCpf($cpfUser) != 1)
-            $msn = 'CPF inválido !';
-        else
-            if(fazerLogin($usuarios ,$cpfUser, $senhaUser) != 1)
-                $msn = 'Login inválido !';
+        if(fazerLogin($usuarios ,$cpfUser, $senhaUser) != 1)
+            $msn = 'Login inválido !';
             
 
     require('../view/login.view.php');

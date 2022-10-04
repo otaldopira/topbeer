@@ -16,7 +16,7 @@
     <div class="login">
 
         <form action="../controller/login.controller.php" method="POST">
-            <input type="text" placeholder="CPF" class="box" name="cpfUser" id="cpfUs">
+            <input type="number" placeholder="CPF" class="box" name="cpfUser" id="cpfUs">
             <input type="password" name="passUs" placeholder="senha" class="box">
             <div class="form-btn">
                 <input type="submit" value="Entrar" class="btn" name="submit">

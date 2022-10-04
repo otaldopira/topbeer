@@ -14,7 +14,7 @@
 
     <div class="login">
 
-        <form method="POST" action="../controller/cadastro.produto.controller.php">
+        <form enctype="multipart/form-data" method="POST" action="../controller/cadastro.produto.controller.php">
             <input type="text" placeholder="nome" class="box" name="nomeProd">
             <input type="text" placeholder="marca" class="box" name="marcaProd">
             <select class="box" name="categoriaProd">

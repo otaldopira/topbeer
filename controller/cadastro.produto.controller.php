@@ -19,10 +19,10 @@
     }
 
     function validaNomeMarca($nome, $marca){
-        if (!preg_match("/^[a-zA-Z-' ]*$/", $nome)) {
+        if (!preg_match("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/", $nome)) {
             return false;
         }
-        if (!preg_match("/^[a-zA-Z-' ]*$/", $marca)) {
+        if (!preg_match("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/", $marca)) {
             return false;
         }
 
