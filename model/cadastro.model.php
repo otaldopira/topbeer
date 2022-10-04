@@ -5,7 +5,7 @@
      );
 
      $produtos = array(
-          array("NOME" => "CERVEJA LONGNECK", "MARCA" => "HEINKEN", "CATEGORIA" => "CERVEJA", "QUANTIDADE" => "5", "PRECO" => 12, "DESCRICAO" => "IMPORTADA", "FOTO" => 'HEINEKEN.PNG'),
+          array("NOME" => "CERVEJA HEINKEN GARRAFA 600ML", "MARCA" => "HEINKEN", "CATEGORIA" => "CERVEJA", "QUANTIDADE" => "5", "PRECO" => 11, "DESCRICAO" => "Criada há quase 140 anos na Holanda, a Heineken é uma das cervejas mais famosas e mais vendidas do mundo. Com fórmula que é referência de cerveja premium, é feita com o mais puro malte, lúpulo e água cristalina. Seu sabor é marcante, de espuma persistente e muita personalidade, a Heineken conquista cada vez mais fãs e apreciadores.", "FOTO" => '../images/p1.jpg'),
      );
 
      function cadastraUsuario($nome, $sobrenome, $cpf, $celular, $email, $senha, $requisicao, $usuarios)

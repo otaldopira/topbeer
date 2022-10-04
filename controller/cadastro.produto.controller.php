@@ -8,7 +8,8 @@
     $quantidadeProduto = $_POST['quantProd'];
     $precoProduto = $_POST['precoProd'];
     $descricaoProduto = $_POST['descricaoProd'];
-    $fotoProduto = $_POST['fotoProd'];
+    $fotoProduto = $_FILES['fotoProd']['tmp_name'];//$_POST['fotoProd'];
+    
 
     function validaCampoVazio($nome, $marca, $categoria, $quantidade, $preco, $descricao){
         if (!empty($nome) && !empty($marca) && !empty($categoria) && !empty($quantidade) && !empty($preco) && !empty($descricao)){

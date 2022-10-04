@@ -1,5 +1,6 @@
 *{
-    margin:0; padding:0;
+    margin:0; 
+    padding:0;
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     outline: none; border:none;
@@ -34,8 +35,7 @@ section{
 
 .btn{
     display: inline-flex;
-    margin-top: 1rem;
-    margin-right: 1rem;
+    margin: 1rem auto;
     border-radius: 5rem;
     background:#333;
     color:#fff;
@@ -335,6 +335,50 @@ header .fa-bars{
 .review .box-container .box .user span{
     font-size: 1.5rem;
     color:#999;
+}
+
+
+.product .prod-row{
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+    padding:3rem 2rem;
+    display: flex;
+    flex:1 1 30rem;  
+}
+
+.col-md-6{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 0 0 40%;
+    max-width: 50%;
+
+}
+
+.col-md-6 input.btn{
+    width: 30%;
+    padding-left: 3.5rem;
+   
+}
+
+.col-md-6 h3{
+    font-size: 2.5rem;
+}
+
+.col-md-6 .preco{
+    font-size: 5rem;
+
+}
+
+.col-md-6 img{
+    overflow: hidden;
+    width: 460px;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    border-radius: .5rem;
 }
 
 .register .row{

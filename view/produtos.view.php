@@ -1,6 +1,8 @@
 <?php
     
     require ('../layout/header.php');
+    require ('../model/cadastro.model.php');
+
 ?>
 
     <!-- Sessão produtos  -->
@@ -9,27 +11,28 @@
 
     <h1 class="heading"><span>produtos</span> </h1>
 
-    <div class="box-container">
+    <?php if(isset($produtos)): ?> 
+        <?php foreach($produtos as $id => $produto): ?>
+            <div class="box-container">
+                <div class="box">
+                    <div class="image">
+                        <img src="<?php echo $produto['FOTO'] ?>" alt="">
+                        
+                        <div class="icons">
+                            <a href="#" class="cart-btn">Resgatar</a>
+                            <a href="../view/descricao.view.php" class="fas fa-share"></a>
+                        </div>
+                        
+                    </div>
 
-        <div class="box">
-            <div class="image">
-                <img src="#" alt="">
-                
-                <div class="icons">
-                    <a href="#" class="cart-btn">Resgatar</a>
-                    <a href="#" class="fas fa-share"></a>
+                    <div class="content">
+                        <h3><?php echo $produto['NOME']?></h3>
+                        <div class="price"><?php echo "BC$ " . $produto['PRECO'] ?></div>
+                    </div>
                 </div>
-                
             </div>
-
-            <div class="content">
-                <h3>Heineken</h3>
-                <div class="price">R$12.99</div>
-            </div>
-
-        </div>
-
-    </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
 
 </section>
 
