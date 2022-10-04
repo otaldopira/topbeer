@@ -5,12 +5,14 @@ require('../model/cadastro.model.php');
 
 ?>
 
-<div class="modal hidden" id="modal">
-    <div class="msn">
-        <p>Você resgatou seu produto !</p>
-        <button id="ok" class="btn">OK</button>
-    </div> 
-</div>
+<?php if(isset($_SESSION['logado'])):?>
+    <div class="modal hidden" id="modal">
+        <div class="msn">
+            <p>Você resgatou seu produto !</p>
+            <button id="ok" class="btn">OK</button>
+        </div>
+    </div>
+<?php endif; ?>
 
 <!-- Sessão produtos  -->
 

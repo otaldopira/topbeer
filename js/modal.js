@@ -10,7 +10,7 @@ botaoResgate?.addEventListener('click', ()=>{
     modal.classList.remove('hidden');
 })
 
-botaoOk.addEventListener('click', ()=>{
+botaoOk?.addEventListener('click', ()=>{
     modal.classList.add('hidden');
 })
 
