@@ -33,7 +33,12 @@ require('../model/cadastro.model.php');
                 <p class="preco">BC$ 11</p>
                 <p>Criada há quase 140 anos na Holanda, a Heineken é uma das cervejas mais famosas e mais vendidas do mundo. Com fórmula que é referência de cerveja premium, é feita com o mais puro malte, lúpulo e água cristalina. Seu sabor é marcante, de espuma persistente e muita personalidade, a Heineken conquista cada vez mais fãs e apreciadores.</p>
                 <hr>
-                <button class="btn" id="resgateDesc"><p>Resgatar</p></button>
+                <?php if(isset($_SESSION['logado'])):?>
+                    <button class="btn" id="resgateDesc"><p>Resgatar</p></button>
+                <?php else: ?>
+                    <a href="./login.view.php" class="btn" id="resgateDesc"><p>Resgatar</p></a>
+                <?php endif; ?>
+                
             </div>
         </div>
     </section>

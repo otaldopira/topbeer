@@ -29,7 +29,11 @@ require('../model/cadastro.model.php');
                         <img src="<?php echo $produto['FOTO'] ?>" alt="">
 
                         <div class="icons">
-                            <a id="resgate" href="#" class="cart-btn">Resgatar</a>
+                            <?php if(isset($_SESSION['logado'])):?>
+                                <a id="resgate" href="#" class="cart-btn">Resgatar</a>
+                            <?php else: ?>
+                                <a id="resgate" href="./login.view.php" class="cart-btn">Resgatar</a>
+                            <?php endif; ?>
                             <a href="../view/descricao.view.php" class="fas fa-share"></a>
                         </div>
 
