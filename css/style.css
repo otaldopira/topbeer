@@ -349,6 +349,41 @@ header .fa-bars{
     flex:1 1 30rem;  
 }
 
+.modal{
+    backdrop-filter: blur(8px);
+    z-index: 1;
+    background:rgba(0, 127, 15, 0.6);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.msn{
+    width: 300px;
+    height: 200px;
+    padding: 5rem ;
+    background-color: beige;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.msn p{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.msn button{
+    display: block;
+    margin: 1.5rem auto;
+}
+
+
 .col-md-6{
     padding: 2rem;
     display: flex;

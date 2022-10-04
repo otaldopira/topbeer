@@ -5,6 +5,13 @@ require('../model/cadastro.model.php');
 
 ?>
 
+<div class="modal hidden" id="modal">
+    <div class="msn">
+        <p>Você resgatou seu produto !</p>
+        <button id="ok" class="btn">OK</button>
+    </div> 
+</div>
+
 <!-- Sessão produtos  -->
 
 <section class="products" id="products">
@@ -24,7 +31,7 @@ require('../model/cadastro.model.php');
                 <p class="preco">BC$ 11</p>
                 <p>Criada há quase 140 anos na Holanda, a Heineken é uma das cervejas mais famosas e mais vendidas do mundo. Com fórmula que é referência de cerveja premium, é feita com o mais puro malte, lúpulo e água cristalina. Seu sabor é marcante, de espuma persistente e muita personalidade, a Heineken conquista cada vez mais fãs e apreciadores.</p>
                 <hr>
-                <button class="btn"><p>Resgatar</p></button>
+                <button class="btn" id="resgateDesc"><p>Resgatar</p></button>
             </div>
         </div>
     </section>
