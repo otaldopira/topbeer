@@ -29,6 +29,15 @@ section{
     background:rgba(0, 39, 3, 0.05);
 }
 
+.heading h2{
+    text-align: center;
+    font-size: 4rem;
+    color:#333;
+    padding:1rem;
+    margin:1rem 0;
+    background:rgba(0, 39, 3, 0.05);
+}
+
 .heading span{
     color:green;
 }
@@ -110,6 +119,41 @@ header .fa-bars{
     border:.1rem solid rgba(0,0,0,.3);
     display: none;
 }
+
+.dados{
+    display: flex;
+    justify-content: center;
+}
+
+th {
+    border-bottom: 1px solid #364043;
+    color: green;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    text-align: left;
+    margin-right: 5em;
+  }
+
+  td {
+    color: black;
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 0.65em 1em;
+  }
+  
+  .disabled td {
+    color: #4F5F64;
+  }
+  
+  tbody tr {
+    transition: background 0.25s ease;
+  }
+
+  tbody tr:hover {
+    background: green;
+  }
+
 
 .menu-menu{
     background: white;
