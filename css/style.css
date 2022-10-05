@@ -173,6 +173,10 @@ th {
     margin: 0.5em;
 }
 
+.menu-trigger{
+    padding: 3px;
+}
+
 .menu-trigger:hover .menu-menu{
     display: block;
 }
