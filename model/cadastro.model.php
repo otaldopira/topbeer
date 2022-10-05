@@ -1,7 +1,9 @@
 <?php
 
      $usuarios = array(
-          array("NOME" => "ADM", "SOBRENOME" => "ADM", "CPF" => "10536569983", "CELULAR" => "42998143100", "EMAIL" => "ti@inovare.med.br", "SENHA" => "12345678", "BEBUMCOINS" => 50000, "REQUISICAO" => 'on'),
+          array("NOME" => "ADM", "SOBRENOME" => "ADM", "CPF" => "01234567890", "CELULAR" => "42999746845", "EMAIL" => "adm@adm.com", "SENHA" => "12345678", "BEBUMCOINS" => 50000, "REQUISICAO" => 'on'),
+          array("NOME" => "ERIC", "SOBRENOME" => "DENKIEVICZ", "CPF" => "10536569983", "CELULAR" => "42998143100", "EMAIL" => "eric@hotmail.com", "SENHA" => "87654321", "BEBUMCOINS" => 10000, "REQUISICAO" => ''),
+          
      );
 
      $produtos = array(

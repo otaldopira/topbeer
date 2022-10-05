@@ -3,8 +3,12 @@
     include('../layout/header.php');
     if(!$_SESSION['logado']) {
         header('Location: ../view/login.view.php');
-        exit();
+        exit();    
     }
+    if($_SESSION['nivelUser'] != "on") {
+        header('Location: ../view/produtos.view.php');
+        exit();
+    }  
 
 ?>
 <section class="register" id="register">

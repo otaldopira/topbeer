@@ -1,10 +1,16 @@
 <?php
 
+
     include('../layout/header.php');
+    session_start();
     if(!$_SESSION['logado']) {
         header('Location: ../view/login.view.php');
-        exit();
+        exit();    
     }
+    if($_SESSION['nivelUser'] != "on") {
+        header('Location: ../view/produtos.view.php');
+        exit();
+    }  
 
 ?>
 
