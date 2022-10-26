@@ -18,15 +18,15 @@
 </head>
 <body>  
 <header>
-    <a href="../view/home.view.php" class="logo">Top Beer<span>.</span></a>
+    <a href="/home" class="logo">Top Beer<span>.</span></a>
     <nav class="navbar">
-        <a href="../view/home.view.php">início</a>
-        <a href="../view/produtos.view.php">produtos</a>
-        <a href="../view/cadastro.usuario.view.php">cadastro</a>
+        <a href="/home">início</a>
+        <a href="#">produtos</a>
+        <a href="/cadastrar">cadastro</a>
     </nav>
 
     <div class="icons">
-        <a href="../view/login.view.php" class="fas fa-user"></a>
+        <a href="/login" class="fas fa-user"></a>
         
         <?php if(!empty($nome)): ?>
             <?php if($nivel == "on"): ?>

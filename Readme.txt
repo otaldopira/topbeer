@@ -29,6 +29,8 @@ Para Instalação do Sistema:
   não esteja, clique na opção "Start" na frente do módulo Apache.
 - Agora já pode abrir o navegador e acessar "localhost" para abrir o sistema.
 
+composer require pecee/simple-router
+
 Requisitos Obrigatórios do Trabalho 1:
 *PHP 8+; OK
 *Documentação de configuração e instalação do software: este documento deve mostrar os 

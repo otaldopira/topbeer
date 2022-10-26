@@ -1,17 +1,26 @@
 <?php   
 
-    require('../model/cadastro.model.php');
+    require('models/usuario.model.php');
 
-    $nomeUser = $_POST['nomeUser'];
-    $sobrenomeUser = $_POST['sobrenomeUser'];
-    $cpfUser = $_POST['cpfUser'];
-    $celularUser = $_POST['celularUser'];
-    $emailUser = $_POST['emailUser'];
-    $senhaUser = $_POST['senhaUser'];
-    $requesicao = $_POST['requisicao'];
+    class UsuarioController{
 
-    
-        
+        public function inserir(){
+            
+            $usuario = new Usuario();
+
+            $usuario->nome = $_POST['nomeUser'];
+            $usuario->sobrenome = $_POST['sobrenomeUser'];
+            $usuario->CPF = $_POST['cpfUser'];
+            $usuario->celular = $_POST['celularUser'];
+            $usuario->email = $_POST['emailUser'];
+            $usuario->senha = $_POST['senhaUser'];
+            $usuario->nivelAutorizacao =  isset($_POST['requisicao']) == 1 ? 1 : 0;
+
+            $usuario->create();
+        }
+
+    }
+
         function validaCampoVazio($nome, $sobrenome, $cpf, $celular, $email, $senha){
             if (!empty($nome) && !empty($sobrenome) && !empty($cpf) && !empty($celular) && !empty($email) && !empty($senha)){
                 return true;
@@ -88,26 +97,25 @@
         }
 
 
-        if (isset($_POST['submit'])) {
-            if(validaCampoVazio($nomeUser, $sobrenomeUser, $cpfUser, $celularUser, $emailUser, $senhaUser) != 1)
-                $msn = 'Obrigatório preencher todos os campos !'; 
-            else
-                if(validaNomeSobrenome($nomeUser, $sobrenomeUser) != 1)
-                    $msn = 'Não é possível utilizar caracteres especiais !';
-                else
-                    if(validaCpf($cpfUser) != 1)
-                        $msn = 'CPF inválido !';
-                    else
-                        if(validaCelular($celularUser) != 1)
-                            $msn = 'Número inválido !';
-                        else
-                            if(validaEmail($emailUser) != 1)
-                                $msn = 'E-mail inválido !';
-                            else
-                                if(validaSenha($senhaUser) != 1)
-                                    $msn = 'Senha deve ter no mínimo 8 caracteres !';
-                                else
-                                    cadastraUsuario($nomeUser, $sobrenomeUser, $cpfUser, $celularUser, $emailUser, $senhaUser, $requesicao, $usuarios);
+        // if (isset($_POST['submit'])) {
+        //     if(validaCampoVazio($nomeUser, $sobrenomeUser, $cpfUser, $celularUser, $emailUser, $senhaUser) != 1)
+        //         $msn = 'Obrigatório preencher todos os campos !'; 
+        //     else
+        //         if(validaNomeSobrenome($nomeUser, $sobrenomeUser) != 1)
+        //             $msn = 'Não é possível utilizar caracteres especiais !';
+        //         else
+        //             if(validaCpf($cpfUser) != 1)
+        //                 $msn = 'CPF inválido !';
+        //             else
+        //                 if(validaCelular($celularUser) != 1)
+        //                     $msn = 'Número inválido !';
+        //                 else
+        //                     if(validaEmail($emailUser) != 1)
+        //                         $msn = 'E-mail inválido !';
+        //                     else
+        //                         if(validaSenha($senhaUser) != 1)
+        //                             $msn = 'Senha deve ter no mínimo 8 caracteres !';
+        //                         else
+        //                             cadastraUsuario($nomeUser, $sobrenomeUser, $cpfUser, $celularUser, $emailUser, $senhaUser, $requesicao, $usuarios);
 
-            require('../view/cadastro.usuario.view.php');
-        }
+        

@@ -1,5 +1,5 @@
 <?php
-include('../layout/header.php');
+include('layout/header.php');
 
 ?>
 <section class="register" id="register">
@@ -8,11 +8,11 @@ include('../layout/header.php');
 
     <div class="row">
 
-        <form action="../controller/cadastro.usuario.controller.php" method="POST">
+        <form action="/inserir" method="POST">
             <input type="text" placeholder="nome" id="nameUs" class="box" name="nomeUser">
             <input type="text" placeholder="sobrenome" id="lastNameUs" class="box" name="sobrenomeUser">
-            <input type="number" placeholder="CPF" id="cpfUs" class="box" name="cpfUser">
-            <input type="tel" placeholder="celular" id="telUs" class="box" name="celularUser">
+            <input type="text" placeholder="CPF" id="cpfUs" class="box" name="cpfUser">
+            <input type="text" placeholder="celular" id="telUs" class="box" name="celularUser">
             <input type="email" placeholder="e-mail" id="emailUs" class="box" name="emailUser">
             <input type="password" placeholder="senha" id="passUs" class="box" name="senhaUser">
             <?php if(isset($_SESSION['nivelUser'])): ?>
@@ -39,6 +39,16 @@ include('../layout/header.php');
     </div>
 
 </section>
+    <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.mask.js"></script>
+    <script>        
+        $(document).ready(function(){
+            //Máscara CPF
+            $('#cpfUs').mask('000.000.000-00');
+            //Máscara celular
+            $('#telUs').mask('(00)00000-0000');
+        });
+    </script>
 <?php
-include('../layout/footer.php');
+include('layout/footer.php');
 ?>

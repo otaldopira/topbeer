@@ -1,6 +1,6 @@
 <?php
     
-    require ('../layout/header.php');
+    require ('layout/header.php');
 
     if(isset($_SESSION['logado']) || $_SESSION == true){
         header('Location: ../view/produtos.view.php');
@@ -14,8 +14,8 @@
 
     <div class="login">
 
-        <form action="../controller/login.controller.php" method="POST">
-            <input type="number" placeholder="CPF" class="box" name="cpfUser" id="cpfUs">
+        <form action="/entrar" method="POST">
+            <input type="text" placeholder="CPF" class="box" name="cpfUser" id="cpfUs">
             <input type="password" name="passUs" placeholder="senha" class="box">
             <div class="form-btn">
                 <input type="submit" value="Entrar" class="btn" name="submit">
@@ -33,9 +33,18 @@
 
 </section>
 
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.mask.js"></script>
+    <script>        
+        $(document).ready(function(){
+            //Máscara CPF
+            $('#cpfUs').mask('000.000.000-00');
+        });
+    </script>
+
 <?php
     
-    require ('../layout/footer.php');
+    require ('layout/footer.php');
 
 ?>
 

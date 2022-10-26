@@ -1,0 +1,21 @@
+{
+    "name": "eric/topbeer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eric Gustavo Denkievicz",
+            "email": "ericdenkievicz@alunos.utfpr.edu.br"
+        },
+        {
+            "name": "Glaucio Araújo",
+            "email": "glaucio@alunos.utfpr.edu.br"
+        }
+       
+    ],
+    "autoload":{
+        "classmap": ["./"]
+    },
+    "require": {
+        "pecee/simple-router": "4.3.7.2"
+    }
+}
