@@ -32,8 +32,8 @@
                         <td><?php echo $usuario->nome?></td>
                         <td><?php echo $usuario->CPF ?></td>
                         <td>
-                            <a class="btn" href="/editar/?id=<?php echo $usuario->id; ?>">Editar</a>      
-                            <a class="btn" href="/remover/?id=<?php echo $usuario->id; ?>">Excluir</a>
+                            <a class="btn" href="/alterarUsuario/?id=<?php echo $usuario->id; ?>">Editar</a>      
+                            <a class="btn" href="/excluirUsuario/?id=<?php echo $usuario->id; ?>">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -41,7 +41,7 @@
         </table>
     </div>
 
-    <!-- <h2 class="heading"> <span> LISTAR PARCEIROS </span> </h2>
+     <h2 class="heading"> <span> LISTAR PARCEIROS </span> </h2>
 
     <div class="dados">
         <table >
@@ -53,17 +53,20 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($empresas as $id => $parceiro): ?>
+                <?php foreach($resultParceiros as $parceiro): ?>
                     <tr>
-                        <td><?php echo $parceiro['RAZAO'] ?></td>
-                        <td><?php echo $parceiro['CNPJ'] ?></td>
-                        <td><a class="btn" href="#">Editar</a> <a class="btn" href="#">Excluir</a></td>
+                        <td><?php echo $parceiro->razaoSocial ?></td>
+                        <td><?php echo $parceiro->CNPJ ?></td>
+                        <td>
+                            <a class="btn" href="#">Editar</a> 
+                            <a class="btn" href="/excluirParceiro/?id=<?php echo $parceiro->id ?>">Excluir</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-
+<!--
     <h2 class="heading"> <span> LISTAR PRODTUOS </span> </h2>
 
     <div class="dados">

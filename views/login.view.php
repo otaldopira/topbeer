@@ -6,6 +6,10 @@
         header('Location: ../view/produtos.view.php');
     }
 
+    if(isset($_GET['erro'])){
+        $msn = $_GET['erro'];
+    }
+
 ?>
 
 <section class="register" id="register">
@@ -21,11 +25,7 @@
                 <input type="submit" value="Entrar" class="btn" name="submit">
             </div>
             <?php if(isset($msn)):?>
-                <?php if($msn != 1): ?>
-                    <p><?php echo $msn ?></p>
-                <?php elseif($msn == 1):?>
-                    <p><?php echo ''?></p>
-                <?php endif; ?>           
+                    <p><?php echo $msn ?></p>        
             <?php endif; ?>       
         </form>
 

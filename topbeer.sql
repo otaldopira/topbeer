@@ -9,7 +9,16 @@ CREATE TABLE `usuarios` (
   `email` varchar(100) NOT NULL,
   `senha` varchar(200) NOT NULL,
   `nivelAutorizacao` tinyint(1) DEFAULT NULL
-)
+);
+
+CREATE TABLE `parceiros`(
+  `id` INT(11) PRIMARY KEY NOT NULL AUTO_INCREMENT , 
+  `razaoSocial` VARCHAR(80) NOT NULL , 
+  `nomeFantasia` VARCHAR(80) NOT NULL , 
+  `CNPJ` VARCHAR(18) NOT NULL , 
+  `telefone` VARCHAR(14) NOT NULL , 
+  `email` VARCHAR(100) NOT NULL 
+);
 
 INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `CPF`, `celular`, `email`, `senha`, `nivelAutorizacao`) VALUES
 (1, 'alo', 'fafas', '103', '42', 'eric@gmail.com', '123', NULL),

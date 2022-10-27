@@ -34,7 +34,7 @@
                     <i class="fas fa-cog"></i>
                     <ul class="menu-menu">
                         <li><a href="../view/cadastro.produto.view.php"> Cadastrar Produto</a></li>
-                        <li><a href="../view/cadastro.parceiros.view.php">Cadastrar Parceiros</a></li>
+                        <li><a href="/parceiros">Cadastrar Parceiros</a></li>
                         <li><a href="/listar">Listar</a></li>
                     </ul>
                 </span>

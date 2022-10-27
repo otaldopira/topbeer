@@ -4,7 +4,6 @@
 
     class Login{
 
-        private $nome;
         private $CPF;
         private $senha;
 
@@ -15,15 +14,16 @@
             $query->bindParam(":CPF", $this->CPF);
             $query->bindParam(":senha", $this->senha);
             $query->execute();
-            
+        
             if($query->rowCount() == 0){
-                header('Location: /login');
+                header('Location: /login/?erro=CPF ou senha inválidos!');
                 return false;
             }else{ 
                 session_start();
                 $result = $query -> fetch(PDO::FETCH_OBJ);   
                 $_SESSION['logado'] = true;
                 $_SESSION['nome'] = $result->nome;
+                $_SESSION['bebumCoins'] = $result->bebumCoins;
                 $_SESSION['nivelUser'] = $result->nivelAutorizacao;
                 header('Location: /home');
                 return true;

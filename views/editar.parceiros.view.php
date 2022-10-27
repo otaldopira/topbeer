@@ -19,6 +19,7 @@
     <div class="row">
 
         <form action="/cadastrarParceiro" method="POST">
+            <input type="hidden" name="idPar" value="<?php echo $fetchOne->id ?>">
             <input type="text" placeholder="razão social" class="box" name="razaoSocial">
             <input type="text" placeholder="fantasia" class="box" name="fantasia">
             <input type="number" placeholder="CNPJ" class="box" name="cnpj">

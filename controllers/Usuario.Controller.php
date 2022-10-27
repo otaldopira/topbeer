@@ -1,6 +1,6 @@
 <?php   
 
-    require('models/usuario.model.php');
+    require('models/Usuario.Model.php');
 
     class UsuarioController{
 
@@ -13,7 +13,8 @@
             $usuario->CPF = $_POST['cpfUser'];
             $usuario->celular = $_POST['celularUser'];
             $usuario->email = $_POST['emailUser'];
-            $usuario->senha = $_POST['senhaUser'];
+            $usuario->senha = md5($_POST['senhaUser']);
+            $usuario->bebumCoins = 5000;
             $usuario->nivelAutorizacao =  isset($_POST['requisicao']) == 1 ? 1 : 0;
 
             $usuario->create();
@@ -24,6 +25,37 @@
             $usuario = new Usuario();
             $resultUser = $usuario->list();
             require('views/listar.view.php');
+        }
+
+        public function excluir(){
+
+            $usuario = new Usuario();
+            $usuario->id = $_GET['id'];
+            $usuario->delete();
+        }
+
+        public function editar(){
+
+            $usuario = new Usuario();
+            $usuario->id = $_POST['idUs'];
+            $usuario->nome = $_POST['nomeUser'];
+            $usuario->sobrenome = $_POST['sobrenomeUser'];
+            $usuario->CPF = $_POST['cpfUser'];
+            $usuario->celular = $_POST['celularUser'];
+            $usuario->email = $_POST['emailUser'];
+            $usuario->senha = md5($_POST['senhaUser']);
+            $usuario->nivelAutorizacao =  isset($_POST['requisicao']) == 1 ? 1 : 0;
+
+            $usuario->edit();
+        }
+
+        public function alterar(){
+
+            $usuario = new Usuario();
+            $usuario->id = $_GET['id'];
+            $fetchOne = $usuario->fetchOne();
+            
+            require ("views/editar.usuario.view.php");
         }
 
     }

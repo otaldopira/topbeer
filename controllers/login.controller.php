@@ -1,6 +1,6 @@
 <?php
 
-    require ('models/login.model.php');
+    require ('models/Login.Model.php');
 
     class LoginController{
 
@@ -9,9 +9,8 @@
             $loginUser = new Login();
 
             $loginUser->CPF = $_POST['cpfUser'];
-            $loginUser->senha = $_POST['passUs'];
-
-            
+            $loginUser->senha = md5($_POST['passUs']);
+ 
             $loginUser->buscarUsuario();
         }
 
