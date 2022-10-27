@@ -5,7 +5,7 @@
         header('Location: ../view/login.view.php');
         exit();    
     }
-    if($_SESSION['nivelUser'] != "on") {
+    if($_SESSION['nivelUser'] != "1") {
         header('Location: ../view/produtos.view.php');
         exit();
     }  

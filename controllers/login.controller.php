@@ -4,17 +4,21 @@
 
     class LoginController{
 
-        private $cpf;
-        private $senha;
-
         public function entrar(){
 
             $loginUser = new Login();
 
             $loginUser->CPF = $_POST['cpfUser'];
             $loginUser->senha = $_POST['passUs'];
+
             
             $loginUser->buscarUsuario();
+        }
+
+        public function sair(){
+            session_start();
+            session_destroy();
+            header('Location: /home');
         }
     }
 

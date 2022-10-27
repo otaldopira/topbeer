@@ -8,6 +8,8 @@
     Router::get('/home', 'HomeController@index');
     Router::get('/login', 'HomeController@login');
     Router::get('/cadastrar', 'HomeController@cadastrar');
+    Router::get('/sair', 'LoginController@sair');
+    Router::get('/listar', 'UsuarioController@listar');
 
 
 

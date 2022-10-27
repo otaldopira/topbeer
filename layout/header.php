@@ -29,19 +29,19 @@
         <a href="/login" class="fas fa-user"></a>
         
         <?php if(!empty($nome)): ?>
-            <?php if($nivel == "on"): ?>
+            <?php if($nivel == "1"): ?>
                 <span class="menu-trigger">
                     <i class="fas fa-cog"></i>
                     <ul class="menu-menu">
                         <li><a href="../view/cadastro.produto.view.php"> Cadastrar Produto</a></li>
                         <li><a href="../view/cadastro.parceiros.view.php">Cadastrar Parceiros</a></li>
-                        <li><a href="../view/listar.view.php">Listar</a></li>
+                        <li><a href="/listar">Listar</a></li>
                     </ul>
                 </span>
             <?php endif; ?>       
             <i><?php echo $nome ?></i>
             <i class="fas fa-wallet"><?php echo " " . $bebum ?></i>
-            <a href="../controller/logout.controller.php">SAIR</a>
+            <a href="/sair">SAIR</a>
         <?php endif; ?>
     </div>
 </header>

@@ -16,8 +16,8 @@ include('layout/header.php');
             <input type="email" placeholder="e-mail" id="emailUs" class="box" name="emailUser">
             <input type="password" placeholder="senha" id="passUs" class="box" name="senhaUser">
             <?php if(isset($_SESSION['nivelUser'])): ?>
-                <?php if($_SESSION['nivelUser'] == 'on'): ?>
-                    <label>ADM:<input type="checkbox" name="requisicao"></label>
+                <?php if($_SESSION['nivelUser'] == '1'): ?>
+                    <label>ADM:<input type="checkbox" value="1" name="requisicao"></label>
                 <?php endif; ?>
             <?php endif; ?>
             <div class="form-btn">

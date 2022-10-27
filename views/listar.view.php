@@ -1,12 +1,12 @@
 <?php
-    
-    require ('../layout/header.php');
-    require ('../model/cadastro.model.php');
-    if(!$_SESSION['logado']) {
+
+    require ('layout/header.php');    
+   
+    if(!isset($_SESSION['logado'])) {
         header('Location: ../view/login.view.php');
         exit();    
     }
-    if($_SESSION['nivelUser'] != "on") {
+    if($_SESSION['nivelUser'] != 1) {
         header('Location: ../view/produtos.view.php');
         exit();
     }  
@@ -27,18 +27,21 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($usuarios as $id => $usuario): ?>
+                <?php foreach($resultUser as $usuario): ?>
                     <tr>
-                        <td><?php echo $usuario['NOME'] ?></td>
-                        <td><?php echo $usuario['CPF'] ?></td>
-                        <td><a class="btn" href="#">Editar</a> <a class="btn" href="#">Excluir</a></td>
+                        <td><?php echo $usuario->nome?></td>
+                        <td><?php echo $usuario->CPF ?></td>
+                        <td>
+                            <a class="btn" href="/editar/?id=<?php echo $usuario->id; ?>">Editar</a>      
+                            <a class="btn" href="/remover/?id=<?php echo $usuario->id; ?>">Excluir</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
 
-    <h2 class="heading"> <span> LISTAR PARCEIROS </span> </h2>
+    <!-- <h2 class="heading"> <span> LISTAR PARCEIROS </span> </h2>
 
     <div class="dados">
         <table >
@@ -84,7 +87,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-    </div>
+    </div> -->
         
 
 
@@ -92,7 +95,7 @@
 
 <?php
     
-    require ('../layout/footer.php');
+    require ('layout/footer.php');
 
 ?>
 

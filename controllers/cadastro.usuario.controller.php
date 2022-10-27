@@ -19,6 +19,13 @@
             $usuario->create();
         }
 
+        public function listar(){
+
+            $usuario = new Usuario();
+            $resultUser = $usuario->list();
+            require('views/listar.view.php');
+        }
+
     }
 
         function validaCampoVazio($nome, $sobrenome, $cpf, $celular, $email, $senha){

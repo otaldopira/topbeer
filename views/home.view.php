@@ -1,5 +1,7 @@
 <?php
 include('layout/header.php');
+
+print_r("a" . $_SESSION['nivelUser']);
 ?>
 
 <section class="home" id="home">

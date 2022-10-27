@@ -14,6 +14,8 @@ Antes da Instalação:
 - Para a execução do sistema é necessário que você instale o ambiente de
   desenvolvimento XAMPP. O download pode ser realizado a partir do endereço:
   https://www.apachefriends.org/pt_br/index.html
+- Para a execução do sistema é necessário tabmém que você instale o composer.
+  https://getcomposer.org/download/
 
 Para Instalação do Sistema:
 - Acesse o endereço: github.com/otaldopira/topbeer

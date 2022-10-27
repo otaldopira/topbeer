@@ -32,6 +32,7 @@
                $bd = Conexao::get();
                $query = $bd->prepare("SELECT * FROM usuarios;");
                $query->execute();
+               
                $usuarios = $query->fetchAll(PDO::FETCH_OBJ);
                return $usuarios;
                
