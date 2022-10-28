@@ -1,7 +1,5 @@
 <?php
 
-     require_once ('Conexao.php');
-
      class Usuario{     
           
           private $id;

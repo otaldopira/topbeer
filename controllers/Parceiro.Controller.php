@@ -1,11 +1,9 @@
 <?php
 
-    require ('models/Parceiro.Model.php');
-
     class ParceiroController{
 
         
-        public function cadastrarParceiro(){
+        public function inserir(){
             
             $parceiro = new Parceiro();
 
@@ -18,14 +16,8 @@
             $parceiro->create();
         }
 
-        public function listarParceiros(){
-
-            $parceiro = new Parceiro();
-            $resultParceiros = $parceiro->list();
-            require('views/listar.view.php');
-        }
-
-        public function excluirParceiro(){
+    
+        public function excluir(){
 
             $parceiro = new Parceiro();
             $parceiro->id = $_GET['id'];
@@ -34,7 +26,7 @@
             header('Location: /listar');
         }
 
-        public function alterar(){
+        public function editar(){
             
             $parceiro = new Parceiro();
             $parceiro->id = $_GET['id'];
@@ -43,16 +35,15 @@
             require ("views/editar.parceiros.view.php");
         }
 
-        public function editarParceiro(){
+        public function atualizar(){
     
-            $parceiro = new parceiro();
+            $parceiro = new Parceiro();
             $parceiro->id = $_POST['idPar'];
-            $parceiro->nome = $_POST['razaoSocial'];
-            $parceiro->sobrenome = $_POST['fantasia'];
-            $parceiro->CPF = $_POST['cnpj'];
-            $parceiro->celular = $_POST['telefone'];
+            $parceiro->razaoSocial = $_POST['razaoSocial'];
+            $parceiro->nomeFantasia = $_POST['fantasia'];
+            $parceiro->CNPJ = $_POST['cnpj'];
+            $parceiro->telefone = $_POST['telefone'];
             $parceiro->email = $_POST['emailEmp'];
-    
             $parceiro->update();
         }
     }

@@ -1,16 +1,14 @@
 <?php
-
     require ('layout/header.php');    
    
     if(!isset($_SESSION['logado'])) {
-        header('Location: ../view/login.view.php');
+        header('Location: /login');
         exit();    
     }
     if($_SESSION['nivelUser'] != 1) {
-        header('Location: ../view/produtos.view.php');
+        header('Location: /home');
         exit();
     }  
-
 ?>
 
 <section class="tabela">
@@ -32,8 +30,8 @@
                         <td><?php echo $usuario->nome?></td>
                         <td><?php echo $usuario->CPF ?></td>
                         <td>
-                            <a class="btn" href="/alterarUsuario/?id=<?php echo $usuario->id; ?>">Editar</a>      
-                            <a class="btn" href="/excluirUsuario/?id=<?php echo $usuario->id; ?>">Excluir</a>
+                            <a class="btn" href="/usuario/editar/?id=<?php echo $usuario->id; ?>">Editar</a>      
+                            <a class="btn" href="/usuario/excluir/?id=<?php echo $usuario->id; ?>">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -58,15 +56,15 @@
                         <td><?php echo $parceiro->razaoSocial ?></td>
                         <td><?php echo $parceiro->CNPJ ?></td>
                         <td>
-                            <a class="btn" href="#">Editar</a> 
-                            <a class="btn" href="/excluirParceiro/?id=<?php echo $parceiro->id ?>">Excluir</a>
+                            <a class="btn" href="/parceiro/editar/?id=<?php echo $parceiro->id ?>">Editar</a> 
+                            <a class="btn" href="/parceiro/excluir/?id=<?php echo $parceiro->id ?>">Excluir</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
     </div>
-<!--
+
     <h2 class="heading"> <span> LISTAR PRODTUOS </span> </h2>
 
     <div class="dados">
@@ -80,25 +78,21 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($produtos as $id => $produto): ?>
+                <?php foreach($resultProdutos as $produto): ?>
                     <tr>
-                        <td><?php echo $produto['NOME'] ?></td>
-                        <td><?php echo $produto['QUANTIDADE'] ?></td>
-                        <td><?php echo $produto['PRECO'] ?></td>
+                        <td><?php echo $produto->nome ?></td>
+                        <td><?php echo $produto->quantidade ?></td>
+                        <td><?php echo $produto->preco ?></td>
                         <td><a class="btn" href="#">Editar</a> <a class="btn" href="#">Excluir</a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
-    </div> -->
+    </div> 
         
 
 
 </section>
 
-<?php
-    
-    require ('layout/footer.php');
-
-?>
+<?php require ('layout/footer.php'); ?>
 

@@ -1,7 +1,5 @@
 <?php   
 
-    require('models/Usuario.Model.php');
-
     class UsuarioController{
 
         public function inserir(){
@@ -20,21 +18,23 @@
             $usuario->create();
         }
 
-        public function listar(){
-
-            $usuario = new Usuario();
-            $resultUser = $usuario->list();
-            require('views/listar.view.php');
-        }
-
         public function excluir(){
 
             $usuario = new Usuario();
             $usuario->id = $_GET['id'];
             $usuario->delete();
         }
-
+        
         public function editar(){
+
+            $usuario = new Usuario();
+            $usuario->id = $_GET['id'];
+            $fetchOne = $usuario->fetchOne();
+            
+            require ("views/editar.usuario.view.php");
+        }
+
+        public function atualizar(){
 
             $usuario = new Usuario();
             $usuario->id = $_POST['idUs'];
@@ -49,14 +49,6 @@
             $usuario->edit();
         }
 
-        public function alterar(){
-
-            $usuario = new Usuario();
-            $usuario->id = $_GET['id'];
-            $fetchOne = $usuario->fetchOne();
-            
-            require ("views/editar.usuario.view.php");
-        }
 
     }
 

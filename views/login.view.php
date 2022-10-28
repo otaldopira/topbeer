@@ -18,7 +18,7 @@
 
     <div class="login">
 
-        <form action="/entrar" method="POST">
+        <form action="/login/entrar" method="POST">
             <input type="text" placeholder="CPF" class="box" name="cpfUser" id="cpfUs">
             <input type="password" name="passUs" placeholder="senha" class="box">
             <div class="form-btn">

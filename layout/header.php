@@ -14,15 +14,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TopBeer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>  
 <header>
     <a href="/home" class="logo">Top Beer<span>.</span></a>
     <nav class="navbar">
         <a href="/home">início</a>
-        <a href="#">produtos</a>
-        <a href="/cadastrar">cadastro</a>
+        <a href="/produtos">produtos</a>
+        <a href="/usuario/cadastrar">cadastro</a>
     </nav>
 
     <div class="icons">
@@ -33,8 +33,8 @@
                 <span class="menu-trigger">
                     <i class="fas fa-cog"></i>
                     <ul class="menu-menu">
-                        <li><a href="../view/cadastro.produto.view.php"> Cadastrar Produto</a></li>
-                        <li><a href="/parceiros">Cadastrar Parceiros</a></li>
+                        <li><a href="/produto/cadastrar"> Cadastrar Produto</a></li>
+                        <li><a href="/parceiro/cadastrar">Cadastrar Parceiros</a></li>
                         <li><a href="/listar">Listar</a></li>
                     </ul>
                 </span>

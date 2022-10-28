@@ -1,10 +1,4 @@
-<?php
-
-require('../layout/header.php');
-require('../model/cadastro.model.php');
-
-?>
-
+<?php require('layout/header.php'); ?>
 
 <?php if(isset($_SESSION['logado'])):?>
     <div class="modal hidden" id="modal">
@@ -21,12 +15,12 @@ require('../model/cadastro.model.php');
 
     <h1 class="heading"><span>produtos</span> </h1>
 
-    <?php if (isset($produtos)) : ?>
-        <?php foreach ($produtos as $id => $produto) : ?>
+    <?php if (isset($resultProduto)) : ?>
+        <?php foreach ($resultProduto as $produto) : ?>
             <div class="box-container">
                 <div class="box">
                     <div class="image">
-                        <img src="<?php echo $produto['FOTO'] ?>" alt="">
+                        <img src="<?php echo $produto->imagem ?>" alt="">
 
                         <div class="icons">
                             <?php if(isset($_SESSION['logado'])):?>
@@ -40,8 +34,8 @@ require('../model/cadastro.model.php');
                     </div>
 
                     <div class="content">
-                        <h3><?php echo $produto['NOME'] ?></h3>
-                        <div class="price"><?php echo "BC$ " . $produto['PRECO'] ?></div>
+                        <h3><?php echo $produto->nome ?></h3>
+                        <div class="price"><?php echo "BC$ " . $produto->preco ?></div>
                     </div>
                 </div>
             </div>
@@ -54,8 +48,4 @@ require('../model/cadastro.model.php');
 
 <!-- Fim sessão produtos -->
 
-<?php
-
-require('../layout/footer.php');
-
-?>
+<?php require('layout/footer.php'); ?>

@@ -8,7 +8,7 @@ include('layout/header.php');
 
     <div class="row">
 
-        <form action="/editar" method="POST">
+        <form action="/usuario/atualizar" method="POST">
             <input type="hidden" name="idUs" value="<?php echo $fetchOne->id ?>">
             <input type="text" placeholder="nome" id="nameUs" class="box" name="nomeUser" value="<?php echo $fetchOne->nome ?>">
             <input type="text" placeholder="sobrenome" id="lastNameUs" class="box" name="sobrenomeUser" value="<?php echo $fetchOne->sobrenome ?>" >

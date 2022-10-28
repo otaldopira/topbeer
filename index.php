@@ -13,14 +13,17 @@
     //IR PARA PÁGINA DE LOGIN
     Router::get('/login', 'HomeController@login');
 
-    //CADASTRO DE USUÁRIOS
-    Router::get('/cadastrar', 'HomeController@cadastrar');
+    //CHAMAR MÉTODO PARA FAZER LOGIN
+    Router::post('/login/entrar', 'LoginController@entrar');
+
+    //IR PARA A TELA DE CADASTRO DE USUÁRIOS
+    Router::get('/usuario/cadastrar', 'HomeController@usuarios');
+
+    //EXCLUIR USUÁRIOS
+    Router::get('/usuario/excluir', 'UsuarioController@excluir');
 
     //IR PARA A TELA DE CADASTRO DE PARCEIROS
-    Router::get('/parceiros', 'HomeController@parceiros');
-
-    //CHAMAR MÉTODO PARA FAZER LOGIN
-    Router::post('/entrar', 'LoginController@entrar');
+    Router::get('/parceiro/cadastrar', 'HomeController@parceiros');
 
     //CHAMAR MÉTODO PARA FAZER LOGOUT
     Router::get('/sair', 'LoginController@sair');
@@ -28,22 +31,34 @@
     //IR PARA PÁGINA DE LISTAR = USUÁRIOS/PARCEIROS/PRODUTOS
     Router::get('/listar', 'HomeController@listar');
 
-    //EXCLUIR USUÁRIOS
-    Router::get('/excluirUsuario', 'UsuarioController@excluir');
+    //CHAMA O MÉTODO PARA VERIFICAR O ID DO USUÁRIO NO BANCO + TELA EDITAR
+    Router::get('/usuario/editar', 'UsuarioController@editar');
 
-    //CHAMA O MÉTODO PARA VERIFICAR O ID DO USUÁRIO NO BANCO
-    Router::get('/alterarUsuario', 'UsuarioController@alterar');
-
-    //EDITAR AS INFORMAÇÕES DO USUÁRIO
-    Router::post('/editarUsuario', 'UsuarioController@editar'); 
+    //ATUALIZA OS DADOS DO USUARIO
+    Router::post('/usuario/atualizar', 'UsuarioController@atualizar'); 
 
     //CADASTRAR USUÁRIO NO BANCO
-    Router::post('/inserir', 'UsuarioController@inserir');
+    Router::post('/usuario/inserir', 'UsuarioController@inserir');
     
     //CHAMA O MÉTODO PARA CADASTRAR O PARCEIRO
-    Router::post('/cadastrarParceiro', 'ParceiroController@cadastrarParceiro');
+    Router::post('/parceiro/inserir', 'ParceiroController@inserir');
     
     //EXCLUIR PARCEIRO
-    Router::get('/excluirParceiro', 'ParceiroController@excluirParceiro');
+    Router::get('/parceiro/excluir', 'ParceiroController@excluir');
+
+    //IR PARA PÁGINA DE EDITAR PARCEIRO 
+    Router::get('/parceiro/editar', 'ParceiroController@editar');
+
+    //ATUALIZAR DADOS DO PARCEIRO
+    Router::post('/parceiro/atualizar', 'ParceiroController@atualizar');
+
+    //IR PARA PÁGINA DE CADASTRO DE PRODUTOS
+    Router::get('/produto/cadastrar', 'HomeController@produtos');
+
+    //CADASTRA PRODUTO NO BANCO
+    Router::post('/produto/inserir', 'ProdutoController@inserir');
+
+    //IR PARA PÁGINA DE PRODUTOS
+    Router::get('/produtos', 'HomeController@catalogo');
 
     Router::start();

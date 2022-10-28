@@ -57,11 +57,16 @@
 
             $bd = Conexao::get();
             $query = $bd->prepare("UPDATE parceiros SET razaoSocial = :razaoSocial, nomeFantasia = :nomeFantasia, CNPJ = :CNPJ, telefone = :telefone, email = :email WHERE id = :id");
+            $query->bindParam(':id', $this->id);
             $query->bindParam(":razaoSocial", $this->razaoSocial);
             $query->bindParam(":nomeFantasia", $this->nomeFantasia);
             $query->bindParam(":CNPJ", $this->CNPJ);
             $query->bindParam(":telefone", $this->telefone);
             $query->bindParam(":email", $this->email);
+            
+            $query->execute();
+
+            header('Location: /listar');
         }
 
 

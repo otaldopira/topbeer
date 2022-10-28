@@ -1,14 +1,13 @@
 <?php
 
-
-    include('../layout/header.php');
+    include('layout/header.php');
     session_start();
     if(!$_SESSION['logado']) {
-        header('Location: ../view/login.view.php');
+        header('Location: /login');
         exit();    
     }
-    if($_SESSION['nivelUser'] != "1") {
-        header('Location: ../view/produtos.view.php');
+    if($_SESSION['nivelUser'] != 1) {
+        header('Location: /home');
         exit();
     }  
 
@@ -20,7 +19,7 @@
 
     <div class="login">
 
-        <form enctype="multipart/form-data" method="POST" action="../controller/cadastro.produto.controller.php">
+        <form enctype="multipart/form-data" method="POST" action="/produto/inserir">
             <input type="text" placeholder="nome" class="box" name="nomeProd">
             <input type="text" placeholder="marca" class="box" name="marcaProd">
             <select class="box" name="categoriaProd">
@@ -56,6 +55,6 @@
 
 <?php
 
-include('../layout/footer.php');
+include('layout/footer.php');
 
 ?>

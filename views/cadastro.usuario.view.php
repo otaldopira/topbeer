@@ -8,7 +8,7 @@ include('layout/header.php');
 
     <div class="row">
 
-        <form action="/inserir" method="POST">
+        <form action="/usuario/inserir" method="POST">
             
             <input type="text" placeholder="nome" id="nameUs" class="box" name="nomeUser">
             <input type="text" placeholder="sobrenome" id="lastNameUs" class="box" name="sobrenomeUser">

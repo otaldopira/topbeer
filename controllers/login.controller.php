@@ -1,7 +1,5 @@
 <?php
 
-    require ('models/Login.Model.php');
-
     class LoginController{
 
         public function entrar(){
