@@ -1,4 +1,4 @@
-<?php require('layout/header.php'); ?>
+<?php require_once('layout/header.php'); ?>
 
 <?php if(isset($_SESSION['logado'])):?>
     <div class="modal hidden" id="modal">
@@ -28,7 +28,7 @@
                             <?php else: ?>
                                 <a id="resgate" href="./login.view.php" class="cart-btn">Resgatar</a>
                             <?php endif; ?>
-                            <a href="/produto/<?php echo $produto->id ?>" class="fas fa-share"></a>
+                            <a href="/prod/<?php echo $produto->id ?>" class="fas fa-share"></a>
                         </div>
 
                     </div>
@@ -48,4 +48,4 @@
 
 <!-- Fim sessão produtos -->
 
-<?php require('layout/footer.php'); ?>
+<?php require_once('layout/footer.php'); ?>

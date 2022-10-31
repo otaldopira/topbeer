@@ -1,9 +1,13 @@
 <?php
     session_start();
-    if(isset($_SESSION['logado']) || $_SESSION == true)
+
+    if(isset($_SESSION['logado']) ){
+        $inf = new UsuarioController();
+        $inf->usuario();
         $nome = $_SESSION['nome'] ?? null;
         $bebum = $_SESSION['bebumCoins'] ?? null;
         $nivel = $_SESSION['nivelUser'] ?? null;
+    }
 ?>
 
 <!DOCTYPE html>

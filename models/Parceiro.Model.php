@@ -69,6 +69,8 @@
             header('Location: /listar');
         }
 
+        
+
 
 
         public function __get($name)

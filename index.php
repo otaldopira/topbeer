@@ -63,6 +63,17 @@
     Router::get('/produtos', 'HomeController@catalogo');
 
     //IR PARA PÁGINA DE PRODUTOS
-    Router::get('/produto/{id}', 'ProdutoController@procurar');
+    Router::get('/prod/{id}', 'ProdutoController@procurar');
+
+    //IR PARA A PÁGINA DE EDITAR DADOS DO PRODUTO
+    Router::get('/produto/editar', 'ProdutoController@editar');
+
+    //EXCLUIR PRODUTO
+    Router::get('/produto/excluir', 'ProdutoController@excluir');
+
+    //ATUALIZAR DADOS DO PRODUTO
+    Router::post('/produto/atualizar', 'ProdutoController@atualizar');
+
+    
 
     Router::start();

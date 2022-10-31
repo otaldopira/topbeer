@@ -1,15 +1,11 @@
-<?php
-include('layout/header.php');
-
-print_r("a" . $_SESSION['nivelUser']);
-?>
+<?php include('layout/header.php');?>
 
 <section class="home" id="home">
 
     <div class="content">
         <h3>RESGATE AGORA</h3>
         <p>VOCÊ PODE SE CADASTRAR E GANHAR BEBUMCOINS E TROCA-LOS POR PRODUTOS EM NOSSA DISTRIBUIDORA!</p>
-        <a href="./produtos.view.php" class="btn">Conferir</a>
+        <a href="/produtos" class="btn">Conferir</a>
     </div>
 
 </section>
@@ -17,7 +13,7 @@ print_r("a" . $_SESSION['nivelUser']);
 <section class="icons-container">
 
     <div class="icons">
-        <img src="../images/icon-1.png" alt="">
+        <img src="/images/icon-1.png" alt="">
         <div class="info">
             <h3>Retire</h3>
             <span>Em nosso endereço</span>
@@ -25,7 +21,7 @@ print_r("a" . $_SESSION['nivelUser']);
     </div>
 
     <div class="icons">
-        <img src="../images/icon-2.png" alt="">
+        <img src="/images/icon-2.png" alt="">
         <div class="info">
             <h3>BebumCoins</h3>
             <span>Ganhe em compras</span>
@@ -33,7 +29,7 @@ print_r("a" . $_SESSION['nivelUser']);
     </div>
 
     <div class="icons">
-        <img src="../images/icon-3.png" alt="">
+        <img src="/images/icon-3.png" alt="">
         <div class="info">
             <h3>Ofertas</h3>
             <span>Diárias</span><br>
@@ -43,6 +39,4 @@ print_r("a" . $_SESSION['nivelUser']);
 
 </section>
 
-<?php
-include('layout/footer.php');
-?>
+<?php include('layout/footer.php');?>

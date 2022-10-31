@@ -34,7 +34,7 @@ include('layout/header.php');
         </form>
 
         <div class="image">
-            <img src="../images/contact-img.jpg" alt="pessoas_bebendo">
+            <img src="/images/contact-img.jpg" alt="pessoas_bebendo">
         </div>
 
     </div>

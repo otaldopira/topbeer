@@ -3,7 +3,7 @@
     require ('layout/header.php');
 
     if(isset($_SESSION['logado']) || $_SESSION == true){
-        header('Location: ../view/produtos.view.php');
+        header('Location: /produtos');
     }
 
     if(isset($_GET['erro'])){

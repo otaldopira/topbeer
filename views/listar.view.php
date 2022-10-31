@@ -83,7 +83,10 @@
                         <td><?php echo $produto->nome ?></td>
                         <td><?php echo $produto->quantidade ?></td>
                         <td><?php echo $produto->preco ?></td>
-                        <td><a class="btn" href="#">Editar</a> <a class="btn" href="#">Excluir</a></td>
+                        <td>
+                            <a class="btn" href="/produto/editar/?id=<?php echo $produto->id ?>">Editar</a> 
+                            <a class="btn" href="/produto/excluir/?id=<?php echo $produto->id ?>">Excluir</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

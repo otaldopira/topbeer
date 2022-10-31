@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Out-2022 às 03:57
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 31-Out-2022 às 19:53
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -65,7 +65,8 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `marca`, `categoria`, `quantidade`, `preco`, `descricao`, `imagem`) VALUES
-(1, 'heinken', 'heinekn', 'Cerveja', 12, 150, 'gsdgsdg', 'C:\\xampp\\tmp\\phpC84B.tmp');
+(2, 'asssss', 'gsdgs', 'Cerveja', 232, 2414, 'gsdgsgsd', '/images/uploads/Screenshot_2.png'),
+(3, 'gsdgsd', 'gsdgdsgsd', 'Cerveja', 2124, 2414, 'gsdgsdgsd', '/images/uploads/Screenshot_2.png');
 
 -- --------------------------------------------------------
 
@@ -90,10 +91,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `CPF`, `celular`, `email`, `senha`, `nivelAutorizacao`, `bebumCoins`) VALUES
-(1, 'alo', 'fafas', '103', '42', 'eric@gmail.com', '123', NULL, 0),
 (3, 'Eduardo', 'Guimares', '10536569983', '42998143100', 'eric@gmail.com', '123', NULL, 0),
-(4, 'Eric', 'Gustavo Denkievicz', '105.365.699-83', '(42)99814-3100', 'eric@gmail.com', '202cb962ac59075b964b07152d234b70', 1, 0),
-(5, 'Argina ', 'Borralho Nunes', '434.728.322-90', '(69)33396-818', 'argina.nunes@geradornv.com.br', '202cb962ac59075b964b07152d234b70', 0, 5000);
+(4, 'Eric', 'Gustavo Denkievicz', '105.365.699-83', '(42)99814-3100', 'eric@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', 0, 190),
+(5, 'Argine', 'Borralho Nunes', '434.728.322-90', '(69)33396-818', 'argina.nunes@geradornv.com.br', 'd41d8cd98f00b204e9800998ecf8427e', 0, 5000),
+(6, 'Elimar ', 'Monnerat Werneck', '681.169.654-09', '(87)97653-371', 'elimar.werneck@geradornv.com.br', 'caf1a3dfb505ffed0d024130f58c5cfa', 0, 10);
 
 --
 -- Índices para tabelas despejadas
@@ -131,13 +132,13 @@ ALTER TABLE `parceiros`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

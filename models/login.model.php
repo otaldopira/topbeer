@@ -19,9 +19,8 @@
             }else{ 
                 session_start();
                 $result = $query -> fetch(PDO::FETCH_OBJ);   
+                $_SESSION['id'] = $result->id;
                 $_SESSION['logado'] = true;
-                $_SESSION['nome'] = $result->nome;
-                $_SESSION['bebumCoins'] = $result->bebumCoins;
                 $_SESSION['nivelUser'] = $result->nivelAutorizacao;
                 header('Location: /home');
                 return true;

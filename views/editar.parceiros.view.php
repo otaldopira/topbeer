@@ -51,7 +51,7 @@
             //Máscara celular
             $('#telEmp').mask('(00)0000-00009');
             $('#telEmp').blur(function(event) {
-                if ($(this).val().length == 15) { 
+                if ($(this).val().length == 14) { 
                     $('#telEmp').mask('(00)00000-0009');
                 } else {
                     $('#telEmp').mask('(00)0000-00009');

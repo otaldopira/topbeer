@@ -38,9 +38,35 @@
             $query = $bd->prepare("SELECT * FROM produtos WHERE id = :id;");
             $query->bindParam(':id', $this->id);
             $query->execute();
-            return $query->fetchAll(PDO::FETCH_OBJ);
+            return $query->fetch(PDO::FETCH_OBJ);
         }
 
+        public function update(){
+            $bd = Conexao::get();
+            $query = $bd->prepare("UPDATE produtos SET nome = :nome, marca = :marca, categoria = :categoria, quantidade = :quantidade, preco = :preco, descricao = :descricao, imagem = :imagem WHERE id = :id");
+
+            $query->bindParam(':id', $this->id);
+            $query->bindParam(':nome', $this->nome);
+            $query->bindParam(':marca', $this->marca);
+            $query->bindParam(':categoria', $this->categoria);
+            $query->bindParam(':quantidade', $this->quantidade);
+            $query->bindParam(':preco', $this->preco);  
+            $query->bindParam(':descricao', $this->descricao);
+            $query->bindParam(':imagem', $this->imagem);
+
+            $query->execute(); 
+            
+            header("Location: /listar");
+        }
+
+        public function delete(){
+            $bd = Conexao::get();
+            $query = $bd->prepare("DELETE FROM produtos WHERE id = :id;");
+            $query->bindParam(':id', $this->id);
+            $query->execute();
+
+            header("Location: /listar");
+        }
 
         public function __get($name)
         {

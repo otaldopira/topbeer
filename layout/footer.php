@@ -6,10 +6,10 @@
 
         <div class="box">
             <h3>acesso rápido</h3>
-            <a href="../view/home.view.php">início</a>
-            <a href="../view/produtos.view.php">produtos</a>
-            <a href="../view/login.view.php">entrar</a>
-            <a href="../view/cadastro.usuario.view.php">cadastro</a>
+            <a href="/home">início</a>
+            <a href="/produtos">produtos</a>
+            <a href="/login">entrar</a>
+            <a href="/usuario/cadastrar">cadastro</a>
         </div>
 
         <div class="box">

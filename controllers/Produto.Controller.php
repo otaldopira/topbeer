@@ -29,7 +29,7 @@
             }
            
                 $imagem = pathinfo($arquivo['name']);
-                $nomeImagem = $imagem['filename']. '.' . $imagem['extension'];
+                $nomeImagem = $imagem['filename']. '.' . $imagem['extension'] ?? null;
                 $pasta = '/images/uploads/' . $nomeImagem;
                 $caminho = $_SERVER['DOCUMENT_ROOT']. $pasta;
                 if(move_uploaded_file($arquivo['tmp_name'], $caminho)){
@@ -46,6 +46,33 @@
             require('views/descricao.view.php');
         }
 
+        public function editar(){
+            $produto = new Produto();
+            $produto->id = $_GET['id'];
+            $prodRes = $produto->search();
+            require('views/editar.produto.view.php');
+        }
+
+        public function atualizar(){
+            $produto = new Produto();
+            $produto->id = $_POST['idProd'];
+            $produto->nome = $_POST['nomeProd'];
+            $produto->marca = $_POST['marcaProd'];
+            $produto->categoria = $_POST['categoriaProd'];
+            $produto->quantidade = $_POST['quantProd'];
+            $produto->preco = $_POST['precoProd'];
+            $produto->descricao = $_POST['descricaoProd'];
+            $produto->imagem = $this->foto() ?? null;
+            $produto->update();
+
+            header('Location: /produtos');
+        }
+
+        public function excluir(){
+            $produto = new Produto();
+            $produto->id = $_GET['id'];
+            $produto->delete();
+        }
     
     }
 

@@ -12,6 +12,7 @@
 
         public function usuarios(){
             require_once('views/cadastro.usuario.view.php');
+            
         }
 
         public function parceiros(){
