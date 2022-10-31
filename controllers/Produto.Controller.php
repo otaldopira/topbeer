@@ -10,9 +10,40 @@
             $produto->quantidade = $_POST['quantProd'];
             $produto->preco = $_POST['precoProd'];
             $produto->descricao = $_POST['descricaoProd'];
-            $produto->imagem = $_FILES['fotoProd']['tmp_name'] ?? null;
+            $produto->imagem = $this->foto() ?? null;
 
             $produto->create();
+        }
+
+        public function foto(){
+            $arquivo = $_FILES['fotoProd'];
+            
+            if(!empty($arquivo['name'])){
+
+            }
+            if(!preg_match('/^(image)\/(jpg|png|jpeg)$/', $arquivo['type'])){
+                    
+            }
+            if($arquivo['size'] > 500000){
+
+            }
+           
+                $imagem = pathinfo($arquivo['name']);
+                $nomeImagem = $imagem['filename']. '.' . $imagem['extension'];
+                $pasta = '/images/uploads/' . $nomeImagem;
+                $caminho = $_SERVER['DOCUMENT_ROOT']. $pasta;
+                if(move_uploaded_file($arquivo['tmp_name'], $caminho)){
+                    echo 'Deu bom !';
+                    return $pasta;
+                }
+        }
+        
+        public function procurar($id){
+            $produto = new Produto();
+            $produto->id = $id;
+            $produtoDescricao = $produto->search();
+            
+            require('views/descricao.view.php');
         }
 
     

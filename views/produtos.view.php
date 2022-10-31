@@ -20,7 +20,7 @@
             <div class="box-container">
                 <div class="box">
                     <div class="image">
-                        <img src="<?php echo $produto->imagem ?>" alt="">
+                        <img width="300" height="50" src="<?php echo $produto->imagem ?>" alt="">
 
                         <div class="icons">
                             <?php if(isset($_SESSION['logado'])):?>
@@ -28,7 +28,7 @@
                             <?php else: ?>
                                 <a id="resgate" href="./login.view.php" class="cart-btn">Resgatar</a>
                             <?php endif; ?>
-                            <a href="../view/descricao.view.php" class="fas fa-share"></a>
+                            <a href="/produto/<?php echo $produto->id ?>" class="fas fa-share"></a>
                         </div>
 
                     </div>

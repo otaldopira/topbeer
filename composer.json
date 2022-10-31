@@ -16,6 +16,7 @@
         "classmap": ["./"]
     },
     "require": {
-        "pecee/simple-router": "4.3.7.2"
+        "pecee/simple-router": "4.3.7.2",
+        "verot/class.upload.php": "*"
     }
 }

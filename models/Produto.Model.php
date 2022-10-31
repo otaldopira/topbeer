@@ -33,6 +33,14 @@
             return $query->fetchAll(PDO::FETCH_OBJ);
         }
 
+        public function search(){
+            $bd = Conexao::get();
+            $query = $bd->prepare("SELECT * FROM produtos WHERE id = :id;");
+            $query->bindParam(':id', $this->id);
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        }
+
 
         public function __get($name)
         {

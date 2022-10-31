@@ -1,6 +1,7 @@
 <?php
 
     require('vendor/autoload.php');
+    
 
     use Pecee\SimpleRouter\SimpleRouter as Router;
 
@@ -60,5 +61,8 @@
 
     //IR PARA PÁGINA DE PRODUTOS
     Router::get('/produtos', 'HomeController@catalogo');
+
+    //IR PARA PÁGINA DE PRODUTOS
+    Router::get('/produto/{id}', 'ProdutoController@procurar');
 
     Router::start();
