@@ -4,19 +4,61 @@
 
         
         public function inserir(){
+
+            $razao = $_POST['razaoSocial'];
+            $fantasia = $_POST['fantasia'];
+            $cnpj = $_POST['cnpj'];
+            $telefone = $_POST['telefone'];
+            $email = $_POST['emailEmp'];
+
+            $dados = ['$razao' => $razao, '$fantasia' => $fantasia, '$cnpj' => $cnpj, 'telefone' => $telefone, '$email' => $email];
+
+            if (!Validacao::validaCampoVazio($dados)){
+                session_start();
+                $_SESSION['erro'] = ['msn' => "PREENCHA TODOS OS CAMPOS !", 'count'=> 0];
+                header('Location: /parceiro/cadastrar');
+                exit();
+            }
+
+            if (!Validacao::validaCaracter($razao, $fantasia)){
+                session_start();
+                $_SESSION['erro'] = ['msn' => "CARACTERES INDISPONÍVEIS !", 'count'=> 0];
+                header('Location: /parceiro/cadastrar');
+                exit();
+            }
+
+            if (!Validacao::validaCnpj($cnpj)){
+                session_start();
+                $_SESSION['erro'] = ['msn' => "CNPJ INVÁLIDO !", 'count'=> 0];
+                header('Location: /parceiro/cadastrar');
+                exit();
+            }
+
+            if (!Validacao::validaCelular($telefone)){
+                session_start();
+                $_SESSION['erro'] = ['msn' => "TELEFONE INVÁLIDO !", 'count'=> 0];
+                header('Location: /parceiro/cadastrar');
+                exit();
+            }
+
+            if (!Validacao::validaEmail($email)){
+                session_start();
+                $_SESSION['erro'] = ['msn' => "E-MAIL INVÁLIDO !", 'count'=> 0];
+                header('Location: /parceiro/cadastrar');
+                exit();
+            }
             
             $parceiro = new Parceiro();
 
-            $parceiro->razaoSocial = $_POST['razaoSocial'];
-            $parceiro->nomeFantasia = $_POST['fantasia'];
-            $parceiro->CNPJ = $_POST['cnpj'];
-            $parceiro->telefone = $_POST['telefone'];
-            $parceiro->email = $_POST['emailEmp'];
+            $parceiro->razaoSocial = $razao;
+            $parceiro->nomeFantasia = $fantasia;
+            $parceiro->CNPJ = $cnpj;
+            $parceiro->telefone = $telefone;
+            $parceiro->email = $email;
 
             $parceiro->create();
         }
 
-    
         public function excluir(){
 
             $parceiro = new Parceiro();
@@ -51,69 +93,7 @@
 
 
 
-    // require ('models/Usuario.Model.php');
 
-    // $razao = $_POST['razaoSocial'];
-    // $fantasia = $_POST['fantasia'];
-    // $cnpj = $_POST['cnpj'];
-    // $telefone = $_POST['telefone'];
-    // $email = $_POST['emailEmp'];
-
-    // function validaCampoVazio($razao, $fantasia, $cnpj, $telefone, $email){
-    //     if (!empty($razao) && !empty($fantasia) && !empty($cnpj) && !empty($telefone) && !empty($email)){
-    //         return true;
-    //     }
-    //     return false;
-    // }
-
-    // function validaRazaoFantasia($razao, $fantasia){
-    //     if (!preg_match("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/", $razao)) {
-    //         return false;
-    //     }
-    //     if (!preg_match("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/", $fantasia)) {
-    //         return false;
-    //     }
-
-    //     return true;
-    // }
-
-    // function validaCnpj($cnpj){
-    //     $cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
-        
-    //     if (strlen($cnpj) != 14)
-    //         return false;
-
-    //     if (preg_match('/(\d)\1{13}/', $cnpj))
-    //         return false;	
-
-    //     // Valida primeiro dígito verificador
-    //     for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++)
-    //     {
-    //         $soma += $cnpj[$i] * $j;
-    //         $j = ($j == 2) ? 9 : $j - 1;
-    //     }
-
-    //     $resto = $soma % 11;
-
-    //     if ($cnpj[12] != ($resto < 2 ? 0 : 11 - $resto))
-    //         return false;
-
-    //     // Valida segundo dígito verificador
-    //     for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++)
-    //     {
-    //         $soma += $cnpj[$i] * $j;
-    //         $j = ($j == 2) ? 9 : $j - 1;
-    //     }
-
-    //     $resto = $soma % 11;
-
-    //     if($cnpj[13] == ($resto < 2 ? 0 : 11 - $resto)){
-    //         return true;
-    //     }else {
-    //         return false;
-    //     }
-        
-    // }
 
     // function validaTelefone($telefone){
     //     $telefone= trim(str_replace('/', '', str_replace(' ', '', str_replace('-', '', str_replace(')', '', str_replace('(', '', $telefone))))));

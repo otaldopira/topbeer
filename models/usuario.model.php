@@ -24,10 +24,11 @@
                $query->bindParam(":senha", $this->senha);
                $query->bindParam(":bebumCoins", $this->bebumCoins);
                $query->bindParam(":nivelAutorizacao", $this->nivelAutorizacao);
-   
                $query->execute();
 
-               header('Location: /home');
+               session_start();
+               $_SESSION['sucesso'] = ['msn' => "USUÁRIO CADASTRADO COM SUCESSO !", 'count'=> 0];
+               header('Location: /usuario/cadastrar');
           }
 
           public function list(){

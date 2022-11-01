@@ -12,7 +12,7 @@
             $query->bindParam(":CPF", $this->CPF);
             $query->bindParam(":senha", $this->senha);
             $query->execute();
-        
+
             if($query->rowCount() == 0){
                 header('Location: /login/?erro=CPF ou senha inválidos!');
                 return false;

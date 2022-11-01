@@ -18,10 +18,11 @@
             $query->bindParam(":CNPJ", $this->CNPJ);
             $query->bindParam(":telefone", $this->telefone);
             $query->bindParam(":email", $this->email);
-
             $query->execute();
 
-            header('Location: /home');
+            session_start();
+            $_SESSION['sucesso'] = ['msn' => "PARCEIRO CADASTRADO COM SUCESSO !", 'count'=> 0];
+            header('Location: /parceiro/cadastrar');
        }
 
         public function list(){

@@ -11,6 +11,24 @@ if (isset($_SESSION['nivelUser']) != 1) {
     exit();
 }
 
+if(isset($_SESSION['erro'])){
+    if($_SESSION['erro']['count'] === 0){
+        $msn = $_SESSION['erro']['msn'];
+        $_SESSION['erro']['count']++;
+    } else {
+       unset($_SESSION['erro']);
+    }
+}
+
+if(isset($_SESSION['sucesso'])){
+    if($_SESSION['sucesso']['count'] === 0){
+        $msn = $_SESSION['sucesso']['msn'];
+        $_SESSION['sucesso']['count']++;
+    } else {
+       unset($_SESSION['sucesso']);
+    }
+}
+
 ?>
 <section class="register" id="register">
 
@@ -18,7 +36,7 @@ if (isset($_SESSION['nivelUser']) != 1) {
 
     <div class="row">
 
-        <form action="/parceiro/cadastrar" method="POST">
+        <form action="/parceiro/inserir" method="POST">
             <input type="text" placeholder="razão social" class="box" name="razaoSocial">
             <input type="text" placeholder="fantasia" class="box" name="fantasia">
             <input type="text" placeholder="CNPJ" id="CNPJemp" class="box" name="cnpj">
@@ -28,11 +46,7 @@ if (isset($_SESSION['nivelUser']) != 1) {
                 <input type="submit" value="Cadastrar" class="btn" name="submit">
             </div>
             <?php if (isset($msn)) : ?>
-                <?php if ($msn != 1) : ?>
                     <p><?php echo $msn ?></p>
-                <?php elseif ($msn == 1) : ?>
-                    <p><?php echo 'Cadastro efetuado com sucesso!' ?></p>
-                <?php endif; ?>
             <?php endif; ?>
         </form>
 
