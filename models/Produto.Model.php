@@ -39,6 +39,7 @@
             $query->bindParam(':id', $this->id);
             $query->execute();
             if($query->rowCount() == 0){
+                header('Location: /carrinho');
                 return false;
             }else {
                 return $query->fetch(PDO::FETCH_OBJ);

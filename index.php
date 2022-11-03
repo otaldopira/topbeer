@@ -77,9 +77,15 @@
     //IR PARA O CARRINHO DE COMPRAS
     Router::get('/carrinho', 'HomeController@carrinho');
 
-    //IR PARA O CARRINHO DE COMPRAS
-    Router::get('/carrinhos', 'CarrinhoController@adicionar');
+    //ADICIONAR PRODUTO NO CARRINHO DE COMPRAS
+    Router::get('/carrinhos/adicionar', 'CarrinhoController@adicionar');
 
-    
+    //REMOVER PRODUTO DO CARRINHO DE COMPRAS
+    Router::get('/carrinhos/remover', 'CarrinhoController@remover');
+
+    //COMPRAR PRODUTO DO CARRINHO DE COMPRAS
+    Router::post('/comprar', 'CarrinhoController@comprar');
+
+    Router::get('/carrinho/{acao}', 'HomeController@sucesso');
 
     Router::start();

@@ -6,8 +6,7 @@
             <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
         </svg>
     </div>
-    <h2>Pagamento realizado! </h2>
-    <p>Em breve entraremos em contato com mais detalhes da compra.</p>
-    <p class="s">Dados do Pagamento: <?= $_GET['sucesso']; ?></p>
+    <h2>Compra Efetuada !</h2>
+    <p>Seus produtos estão prontos para serem retirados</p>
 </div>
 <?php require('layout/footer.php'); ?>

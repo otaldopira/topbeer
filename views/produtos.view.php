@@ -20,11 +20,11 @@
             <div class="box-container">
                 <div class="box">
                     <div class="image">
-                        <img width="300" height="50" src="<?php echo $produto->imagem ?>" alt="">
+                        <img src="<?php echo $produto->imagem ?>" alt="">
 
                         <div class="icons">
                             <?php if(isset($_SESSION['logado'])):?>
-                                <a id="resgate" href="/carrinhos/?adicionar=<?php echo $produto->id?>" class="cart-btn">Resgatar</a>
+                                <a id="resgate" href="/carrinhos/adicionar/?adicionar=<?php echo $produto->id?>" class="cart-btn">Resgatar</a>
                             <?php else: ?>
                                 <a id="resgate" href="/login" class="cart-btn">Resgatar</a>
                             <?php endif; ?>
