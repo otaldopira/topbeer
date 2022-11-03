@@ -38,7 +38,11 @@
             $query = $bd->prepare("SELECT * FROM produtos WHERE id = :id;");
             $query->bindParam(':id', $this->id);
             $query->execute();
-            return $query->fetch(PDO::FETCH_OBJ);
+            if($query->rowCount() == 0){
+                return false;
+            }else {
+                return $query->fetch(PDO::FETCH_OBJ);
+            }  
         }
 
         public function update(){

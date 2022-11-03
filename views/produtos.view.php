@@ -24,9 +24,9 @@
 
                         <div class="icons">
                             <?php if(isset($_SESSION['logado'])):?>
-                                <a id="resgate" href="#" class="cart-btn">Resgatar</a>
+                                <a id="resgate" href="/carrinhos/?adicionar=<?php echo $produto->id?>" class="cart-btn">Resgatar</a>
                             <?php else: ?>
-                                <a id="resgate" href="./login.view.php" class="cart-btn">Resgatar</a>
+                                <a id="resgate" href="/login" class="cart-btn">Resgatar</a>
                             <?php endif; ?>
                             <a href="/prod/<?php echo $produto->id ?>" class="fas fa-share"></a>
                         </div>

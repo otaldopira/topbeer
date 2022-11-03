@@ -1,12 +1,13 @@
 <?php
 
-class Validacao{
+class Validacao
+{
 
     public static function validaCampoVazio($dados)
-    {  
-        foreach ($dados as $key => $dado){
-        
-            if (empty($dado)){
+    {
+        foreach ($dados as $key => $dado) {
+
+            if (empty($dado)) {
                 return false;
             }
             return true;
@@ -65,9 +66,9 @@ class Validacao{
         $regTel = '/^\(?\d{2}\)?\s?\d{4}\-?\d{4}$/';
         $regexCel = '/^\(?\d{2}\)?\s?\d{5}\-?\d{4}$/';
 
-        if (preg_match($regexCel, $telefone) || preg_match($regTel, $telefone)){
+        if (preg_match($regexCel, $telefone) || preg_match($regTel, $telefone)) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
@@ -88,18 +89,18 @@ class Validacao{
         return true;
     }
 
-    public static function validaCnpj($cnpj){
+    public static function validaCnpj($cnpj)
+    {
         $cnpj = preg_replace('/[^0-9]/', '', (string) $cnpj);
-        
+
         if (strlen($cnpj) != 14)
             return false;
 
         if (preg_match('/(\d)\1{13}/', $cnpj))
-            return false;	
+            return false;
 
         // Valida primeiro dígito verificador
-        for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++)
-        {
+        for ($i = 0, $j = 5, $soma = 0; $i < 12; $i++) {
             $soma += $cnpj[$i] * $j;
             $j = ($j == 2) ? 9 : $j - 1;
         }
@@ -110,21 +111,35 @@ class Validacao{
             return false;
 
         // Valida segundo dígito verificador
-        for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++)
-        {
+        for ($i = 0, $j = 6, $soma = 0; $i < 13; $i++) {
             $soma += $cnpj[$i] * $j;
             $j = ($j == 2) ? 9 : $j - 1;
         }
 
         $resto = $soma % 11;
 
-        if($cnpj[13] == ($resto < 2 ? 0 : 11 - $resto)){
+        if ($cnpj[13] == ($resto < 2 ? 0 : 11 - $resto)) {
             return true;
-        }else {
+        } else {
             return false;
         }
-        
     }
+
+    public static function validaQuantPreco($quantidade)
+    {
+        if ($quantidade <= 0) {
+            return false;
+        }
+        return true;
+    }
+
+    public static function validaDescricao($descricao)
+    {
+        if (strlen($descricao) > 5) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
-
-

@@ -32,5 +32,5 @@
 
 <!-- Fim sessão rodapé -->
 </body>
-    <script src="../js/modal.js" type="text/javascript"></script>
+  
 </html>

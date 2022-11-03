@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Out-2022 às 19:53
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.0.19
+-- Tempo de geração: 03-Nov-2022 às 02:44
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,7 +41,7 @@ CREATE TABLE `parceiros` (
 --
 
 INSERT INTO `parceiros` (`id`, `razaoSocial`, `nomeFantasia`, `CNPJ`, `telefone`, `email`) VALUES
-(2, 'Antonella e Anderson ', 'Eletrônica ME', '11.891.8370/0019-4', '(19)2543-0289', 'suporte@eletronica.com');
+(2, 'Antonella', 'Eletrônica ME', '11.891.8370/0019-4', '(19)2543-0289', 'suporte@eletronica.com');
 
 -- --------------------------------------------------------
 
@@ -65,8 +65,8 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `marca`, `categoria`, `quantidade`, `preco`, `descricao`, `imagem`) VALUES
-(2, 'asssss', 'gsdgs', 'Cerveja', 232, 2414, 'gsdgsgsd', '/images/uploads/Screenshot_2.png'),
-(3, 'gsdgsd', 'gsdgdsgsd', 'Cerveja', 2124, 2414, 'gsdgsdgsd', '/images/uploads/Screenshot_2.png');
+(2, 'A', 'gsdgs', 'Cerveja', 232, 2414, 'gsdgsgsd', NULL),
+(3, 'gsdgsd', 'gsdgdsgsd', 'Cerveja', 2124, 2414, 'gsdgsdgsd', '/images/uploads/pexels-sohail-nachiti-807598.jpg');
 
 -- --------------------------------------------------------
 
@@ -91,10 +91,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `CPF`, `celular`, `email`, `senha`, `nivelAutorizacao`, `bebumCoins`) VALUES
-(3, 'Eduardo', 'Guimares', '10536569983', '42998143100', 'eric@gmail.com', '123', NULL, 0),
-(4, 'Eric', 'Gustavo Denkievicz', '105.365.699-83', '(42)99814-3100', 'eric@gmail.com', 'd41d8cd98f00b204e9800998ecf8427e', 0, 190),
-(5, 'Argine', 'Borralho Nunes', '434.728.322-90', '(69)33396-818', 'argina.nunes@geradornv.com.br', 'd41d8cd98f00b204e9800998ecf8427e', 0, 5000),
-(6, 'Elimar ', 'Monnerat Werneck', '681.169.654-09', '(87)97653-371', 'elimar.werneck@geradornv.com.br', 'caf1a3dfb505ffed0d024130f58c5cfa', 0, 10);
+(7, 'Eric G', 'Gustavo Denkievicz', '105.365.699-83', '(42)99814-3100', 'eric@gmail.com', '5e8667a439c68f5145dd2fcbecf02209', 1, 5000),
+(8, 'Maria ', 'Limeira Thomaz', '358.857.572-32', '(68)9945-2323', 'maria.thomaz@geradornv.com.br', '25d55ad283aa400af464c76d713c07ad', 0, 5000);
 
 --
 -- Índices para tabelas despejadas
@@ -138,7 +136,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

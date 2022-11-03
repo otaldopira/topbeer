@@ -19,6 +19,7 @@
     <title>TopBeer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/estilos.css">
 </head>
 <body>  
 <header>
@@ -45,6 +46,7 @@
             <?php endif; ?>       
             <i><?php echo $nome ?></i>
             <i class="fas fa-wallet"><?php echo " " . $bebum ?></i>
+            <a href="/carrinho" class="fas fa-shopping-cart"></a>
             <a href="/sair">SAIR</a>
         <?php endif; ?>
     </div>

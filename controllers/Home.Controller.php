@@ -42,4 +42,9 @@
             require_once('views/listar.view.php');
         }
 
+        public function carrinho(){
+
+            require_once('views/carrinho.view.php');
+        }
+
     }

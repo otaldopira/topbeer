@@ -70,10 +70,6 @@
             header('Location: /listar');
         }
 
-        
-
-
-
         public function __get($name)
         {
             return $this->$name;

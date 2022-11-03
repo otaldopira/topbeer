@@ -9,7 +9,25 @@
     if($_SESSION['nivelUser'] != 1) {
         header('Location: /home');
         exit();
-    }  
+    } 
+    
+    if(isset($_SESSION['erro'])){
+        if($_SESSION['erro']['count'] === 0){
+            $msn = $_SESSION['erro']['msn'];
+            $_SESSION['erro']['count']++;
+        } else {
+           unset($_SESSION['erro']);
+        }
+    }
+    
+    if(isset($_SESSION['sucesso'])){
+        if($_SESSION['sucesso']['count'] === 0){
+            $msn = $_SESSION['sucesso']['msn'];
+            $_SESSION['sucesso']['count']++;
+        } else {
+           unset($_SESSION['sucesso']);
+        }
+    }
 
 ?>
 
@@ -23,13 +41,13 @@
             <input type="text" placeholder="nome" class="box" name="nomeProd">
             <input type="text" placeholder="marca" class="box" name="marcaProd">
             <select class="box" name="categoriaProd">
-                <option disabled selected hidden>categoria</option>
+                <option selected hidden>categoria</option>
                 <option value="Cerveja">Cerveja</option>
                 <option value="Vinho">Vinho</option>
                 <option value="Whisky">Whisky</option>
             </select>
             <input type="number" placeholder="quantidade" class="box" name="quantProd">
-            <input type="text" placeholder="preço" class="box" name="precoProd">
+            <input type="number" placeholder="preço" class="box" name="precoProd">
             <textarea class="box" placeholder="descrição" cols="10" rows="5" name="descricaoProd"></textarea>
             <input name="fotoProd" type="file" class="box">
             <label>*PNG, JPG, JPEG.</label><br>
@@ -40,11 +58,7 @@
             </div>
 
             <?php if(isset($msn)):?>
-                <?php if($msn != 1): ?>
                     <p><?php echo $msn ?></p>
-                <?php elseif($msn == 1):?>
-                    <p><?php echo 'Cadastro efetuado com sucesso!'?></p>
-                <?php endif; ?>           
             <?php endif; ?>
 
         </form>

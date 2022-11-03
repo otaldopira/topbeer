@@ -74,6 +74,12 @@
     //ATUALIZAR DADOS DO PRODUTO
     Router::post('/produto/atualizar', 'ProdutoController@atualizar');
 
+    //IR PARA O CARRINHO DE COMPRAS
+    Router::get('/carrinho', 'HomeController@carrinho');
+
+    //IR PARA O CARRINHO DE COMPRAS
+    Router::get('/carrinhos', 'CarrinhoController@adicionar');
+
     
 
     Router::start();
