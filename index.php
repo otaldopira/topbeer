@@ -86,6 +86,6 @@
     //COMPRAR PRODUTO DO CARRINHO DE COMPRAS
     Router::post('/comprar', 'CarrinhoController@comprar');
 
-    Router::get('/carrinho/{acao}', 'HomeController@sucesso');
+    Router::get('/carrinho/{acao}', 'HomeController@compra');
 
     Router::start();

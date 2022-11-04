@@ -39,6 +39,7 @@ if(isset($_SESSION['sucesso'])){
             <input type="password" placeholder="senha" id="passUs" class="box" name="senhaUser">
             <?php if (isset($_SESSION['nivelUser'])): ?>
                 <?php if ($_SESSION['nivelUser'] == '1'): ?>
+                    <input type="number" placeholder="bebum coins" name="bebumCoinsUser" class="box">
                     <label>ADM:<input type="checkbox" value="1" name="requisicao"></label>
                 <?php endif;?>
             <?php endif;?>

@@ -1,31 +1,31 @@
 <?php
 
-    include('layout/header.php');
-        
-    if(!$_SESSION['logado']) {
-        header('Location: /login');
-        exit();    
+include('layout/header.php');
+
+if (!$_SESSION['logado']) {
+    header('Location: /login');
+    exit();
+}
+if (isset($_SESSION['nivelUser']) != 1) {
+    header('Location: /login');
+    exit();
+}
+if (isset($_SESSION['erro'])) {
+    if ($_SESSION['erro']['count'] === 0) {
+        $msn = $_SESSION['erro']['msn'];
+        $_SESSION['erro']['count']++;
+    } else {
+        unset($_SESSION['erro']);
     }
-    if(isset($_SESSION['nivelUser']) != 1) {
-        header('Location: /login');
-        exit();
-    }  
-    if(isset($_SESSION['erro'])){
-        if($_SESSION['erro']['count'] === 0){
-            $msn = $_SESSION['erro']['msn'];
-            $_SESSION['erro']['count']++;
-        } else {
-           unset($_SESSION['erro']);
-        }
+}
+if (isset($_SESSION['sucesso'])) {
+    if ($_SESSION['sucesso']['count'] === 0) {
+        $msn = $_SESSION['sucesso']['msn'];
+        $_SESSION['sucesso']['count']++;
+    } else {
+        unset($_SESSION['sucesso']);
     }
-    if(isset($_SESSION['sucesso'])){
-        if($_SESSION['sucesso']['count'] === 0){
-            $msn = $_SESSION['sucesso']['msn'];
-            $_SESSION['sucesso']['count']++;
-        } else {
-           unset($_SESSION['sucesso']);
-        }
-    }
+}
 
 ?>
 <section class="register" id="register">
@@ -44,12 +44,8 @@
             <div class="form-btn">
                 <input type="submit" value="Atualizar" class="btn" name="submit">
             </div>
-            <?php if(isset($msn)):?>
-                <?php if($msn != 1): ?>
-                    <p><?php echo $msn ?></p>
-                <?php elseif($msn == 1):?>
-                    <p><?php echo 'Cadastro efetuado com sucesso!'?></p>
-                <?php endif; ?>           
+            <?php if (isset($msn)) : ?>
+                <p><?php echo $msn ?></p>
             <?php endif; ?>
         </form>
 
@@ -60,21 +56,21 @@
     </div>
 
 </section>
-    <script>
-        $(document).ready(function() {
-            //Máscara CPF
-            $('#CNPJemp').mask('00.000.0000/0000-00');
-            //Máscara celular
-            $('#telEmp').mask('(00)0000-00009');
-            $('#telEmp').blur(function(event) {
-                if ($(this).val().length == 14) { 
-                    $('#telEmp').mask('(00)00000-0009');
-                } else {
-                    $('#telEmp').mask('(00)0000-00009');
-                }
-            });
+<script>
+    $(document).ready(function() {
+        //Máscara CPF
+        $('#CNPJemp').mask('00.000.0000/0000-00');
+        //Máscara celular
+        $('#telEmp').mask('(00)0000-00009');
+        $('#telEmp').blur(function(event) {
+            if ($(this).val().length == 14) {
+                $('#telEmp').mask('(00)00000-0009');
+            } else {
+                $('#telEmp').mask('(00)0000-00009');
+            }
         });
-    </script>
+    });
+</script>
 <?php
 include('layout/footer.php');
 ?>

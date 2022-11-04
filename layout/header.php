@@ -8,6 +8,12 @@
         $bebum = $_SESSION['bebumCoins'] ?? null;
         $nivel = $_SESSION['nivelUser'] ?? null;
     }
+
+    if(isset($_SESSION['carrinho'])){
+        $quant = array_column($_SESSION['carrinho'], 'quantidade');
+        if(array_sum($quant) > 0)
+            $contador = array_sum($quant);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +52,7 @@
             <?php endif; ?>       
             <i><?php echo $nome ?></i>
             <i class="fas fa-wallet"><?php echo " " . $bebum ?></i>
-            <a href="/carrinho" class="fas fa-shopping-cart"></a>
+            <a href="/carrinho" class="fas fa-shopping-cart"><?php if(isset($contador)) echo $contador  ?></a>
             <a href="/sair">SAIR</a>
         <?php endif; ?>
     </div>

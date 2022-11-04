@@ -120,10 +120,14 @@ header .fa-bars{
     display: none;
 }
 
-.dados{
+.tabela .dados{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
+
 
 th {
     border-bottom: 1px solid #364043;
@@ -180,6 +184,7 @@ th {
 .menu-trigger:hover .menu-menu{
     display: block;
 }
+
 
 .home{
     display: flex;
@@ -263,7 +268,7 @@ th {
 }
 
 .products .box-container .box{
-    flex:1 1 30rem;
+    flex: 1;
     box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
     border-radius: .5rem;
     border:.1rem solid rgba(0,0,0,.1);
@@ -469,11 +474,25 @@ th {
 }
 
 .col-md-6 h3{
-    font-size: 2.5rem;
+    font-size: 4.5rem;
+    font-weight: 800;
 }
 
 .col-md-6 .preco{
     font-size: 5rem;
+
+}
+
+.col-md-6 p{
+    font-size: 1.8em;
+
+}
+
+.col-md-6 .btn{
+    width: 100%;
+    font-size: 5em;
+    text-align: center;
+    display: inline;
 
 }
 

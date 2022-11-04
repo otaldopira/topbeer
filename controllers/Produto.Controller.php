@@ -4,8 +4,8 @@
 
         public function inserir(){
 
-            $nome = $_POST['nomeProd'];
-            $marca = $_POST['marcaProd'];
+            $nome = filter_input(INPUT_POST, 'nomeProd', FILTER_SANITIZE_SPECIAL_CHARS);
+            $marca = filter_input(INPUT_POST, 'marcaProd', FILTER_SANITIZE_SPECIAL_CHARS);
             $categoria = $_POST['categoriaProd'];
             $quantidade = $_POST['quantProd'];
             $preco = $_POST['precoProd'];
@@ -16,13 +16,6 @@
             if (!Validacao::validaCampoVazio($dados)){
                 session_start();
                 $_SESSION['erro'] = ['msn' => "PREENCHA TODOS OS CAMPOS !", 'count'=> 0];
-                header('Location: /produto/cadastrar');
-                exit();
-            }
-
-            if (!Validacao::validaCaracter($nome, $marca)){
-                session_start();    
-                $_SESSION['erro'] = ['msn' => "CARACTERES INDISPONÍVEIS !", 'count'=> 0];
                 header('Location: /produto/cadastrar');
                 exit();
             }

@@ -39,12 +39,6 @@
     min-width: 60%;
 }
 
-.items .controles a{
-    width: 100%;
-    padding-left: 100%;
-    margin-left: auto;
-}
-
 .total small {
     margin-top: 5px;
     color: green;
@@ -64,26 +58,28 @@ h1 {font-size: 2.4em; }
     border-bottom: 1px solid #ddd;
     padding: 15px 0 15px 0;
     align-items: center;
-    justify-content: start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .items ul li h4 {
-    font-size: 1.4em;
+    font-size: 1.6em;
     font-weight: normal;
     margin: 0;
      
 }
 .items ul li span {
-    font-size: 1em;
+    font-size: 1.4em;
     color: #999;
     display: block;
 }
 .items ul li .dados small {
+    font-size: 1.4em;
     color:green;
 }
 .items ul li img {
-    width: 80px;
-    height: 100px;
+    width: 40px;
+    height: 60px;
     margin-right: 15px;
     border-radius: 30px;
 }

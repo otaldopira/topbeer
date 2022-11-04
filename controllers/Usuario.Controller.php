@@ -6,12 +6,13 @@ class UsuarioController
     public function inserir()
     {
 
-        $nome = $_POST['nomeUser'];
-        $sobrenome = $_POST['sobrenomeUser'];
+        $nome = filter_input(INPUT_POST, 'nomeUser', FILTER_SANITIZE_SPECIAL_CHARS);
+        $sobrenome = filter_input(INPUT_POST, 'sobrenomeUser', FILTER_SANITIZE_SPECIAL_CHARS);
         $cpf = $_POST['cpfUser'];
         $celular = $_POST['celularUser'];
         $email = $_POST['emailUser'];
         $senha = $_POST['senhaUser'];
+        $bebumCoins = isset($_POST['bebumCoinsUser']) ? $_POST['bebumCoinsUser'] : 5000;
         $nivel = isset($_POST['requisicao']) ? 1 : 0;
 
         $dados = ['$nome' => $nome, '$sobrenome' => $sobrenome , '$cpf' => $cpf, '$celular', '$senha' => $senha];
@@ -60,7 +61,7 @@ class UsuarioController
         $usuario->celular = $celular;
         $usuario->email = $email;
         $usuario->senha = md5($senha);
-        $usuario->bebumCoins = 5000;
+        $usuario->bebumCoins = $bebumCoins;
         $usuario->nivelAutorizacao = $nivel;
 
         $usuario->create();
@@ -94,6 +95,7 @@ class UsuarioController
         $celular = $_POST['celularUser'];
         $email = $_POST['emailUser'];
         $senha = $_POST['senhaUser'];
+        $bebumCoins = isset($_POST['bebumCoinsUser']) ? $_POST['bebumCoinsUser'] : 0;
         $nivel = isset($_POST['requisicao']) ? 1 : 0;
 
         $dados = ['$nome' => $nome, '$sobrenome' => $sobrenome , '$cpf' => $cpf, '$celular', '$senha' => $senha];
@@ -143,6 +145,7 @@ class UsuarioController
         $usuario->celular = $celular;
         $usuario->email = $email;
         $usuario->senha = md5($senha);
+        $usuario->bebumCoins = $bebumCoins;
         $usuario->nivelAutorizacao = $nivel;
 
         $usuario->edit();

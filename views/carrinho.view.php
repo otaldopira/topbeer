@@ -22,7 +22,7 @@
                   <small>BC <?php echo $produto['preco'] * $produto['quantidade']?></small>
                 </div>
                 <div class="controles">
-                  <a href="/carrinhos/remover/?remover=<?php echo $id ?>">remover</a>
+                  <a class="btn" href="/carrinhos/remover/?remover=<?php echo $id ?>">remover</a>
                 </div>
               </li>
             </ul>

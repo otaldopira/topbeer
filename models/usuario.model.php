@@ -65,7 +65,7 @@
 
           public function edit(){
                $bd = Conexao::get();
-               $query = $bd->prepare("UPDATE usuarios SET nome = :nome, sobrenome = :sobrenome, CPF = :CPF, celular = :celular, email = :email, senha = :senha, nivelAutorizacao = :nivelAutorizacao WHERE id = :id");
+               $query = $bd->prepare("UPDATE usuarios SET nome = :nome, sobrenome = :sobrenome, CPF = :CPF, celular = :celular, email = :email, senha = :senha, bebumCoins = :bebumCoins, nivelAutorizacao = :nivelAutorizacao WHERE id = :id");
                $query->bindParam(":id", $this->id);
                $query->bindParam(":nome", $this->nome);
                $query->bindParam(":sobrenome", $this->sobrenome);
@@ -73,6 +73,7 @@
                $query->bindParam(":celular", $this->celular);
                $query->bindParam(":email", $this->email);
                $query->bindParam(":senha", $this->senha);
+               $query->bindParam(":bebumCoins", $this->bebumCoins);
                $query->bindParam(":nivelAutorizacao", $this->nivelAutorizacao);
                $query->execute();
 

@@ -1,6 +1,33 @@
 <?php
 include('layout/header.php');
 
+if(!$_SESSION['logado']) {
+    header('Location: /login');
+    exit();    
+}
+if($_SESSION['nivelUser'] != 1) {
+    header('Location: /home');
+    exit();
+}  
+
+if(isset($_SESSION['erro'])){
+    //var_dump($_SESSION['erroPar']);
+    if($_SESSION['erro']['count'] === 0){
+        $msn = $_SESSION['erro']['msn'];
+        $_SESSION['erro']['count']++;
+    } else {
+       unset($_SESSION['erro']);
+    }
+}
+
+if(isset($_SESSION['sucesso'])){
+    if($_SESSION['sucesso']['count'] === 0){
+        $msn = $_SESSION['sucesso']['msn'];
+        $_SESSION['sucesso']['count']++;
+    } else {
+       unset($_SESSION['sucesso']);
+    }
+}
 ?>
 <section class="register" id="register">
 
@@ -18,18 +45,15 @@ include('layout/header.php');
             <input type="password" placeholder="senha" id="passUs" class="box" name="senhaUser">
             <?php if(isset($_SESSION['nivelUser'])): ?>
                 <?php if($_SESSION['nivelUser'] == '1'): ?>
-                    <label>ADM:<input type="checkbox" value="1" name="requisicao"></label>
+                    <input type="number" placeholder="bebum coins" name="bebumCoinsUser" class="box" value="<?php echo $fetchOne->bebumCoins ?>">
+                    <label>ADM:<input type="checkbox" value="1" name="requisicao" ></label>
                 <?php endif; ?>
             <?php endif; ?>
             <div class="form-btn">
                 <input type="submit" value="Atualizar" class="btn" name="submit">
             </div>
             <?php if(isset($msn)):?>
-                <?php if($msn != 1): ?>
-                    <p><?php echo $msn ?></p>
-                <?php elseif($msn == 1):?>
-                    <p><?php echo 'Cadastro efetuado com sucesso!'?></p>
-                <?php endif; ?>           
+                    <p><?php echo $msn ?></p>       
             <?php endif; ?>
         </form>
 

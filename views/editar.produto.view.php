@@ -11,6 +11,25 @@
         exit();
     }  
 
+    if(isset($_SESSION['erro'])){
+        //var_dump($_SESSION['erroPar']);
+        if($_SESSION['erro']['count'] === 0){
+            $msn = $_SESSION['erro']['msn'];
+            $_SESSION['erro']['count']++;
+        } else {
+           unset($_SESSION['erro']);
+        }
+    }
+    
+    if(isset($_SESSION['sucesso'])){
+        if($_SESSION['sucesso']['count'] === 0){
+            $msn = $_SESSION['sucesso']['msn'];
+            $_SESSION['sucesso']['count']++;
+        } else {
+           unset($_SESSION['sucesso']);
+        }
+    }
+
 ?>
 
 <section class="register" id="register">

@@ -30,6 +30,7 @@ class CarrinhoController
             }
             if ($_SESSION['carrinho'][$id]['quantidade'] <= 0) {
                 unset($_SESSION['carrinho'][$id]);
+                unset($_SESSION['total']);
             }
             header('Location: /carrinho');
         } else if (!isset($_SESSION['carrinho']) || !isset($_SESSION['carrinho'][$id])){
@@ -38,8 +39,16 @@ class CarrinhoController
     }
 
     public function comprar(){
-        $compras = new Carrinho();
-        $compras->buy();
+        
+        session_start();
+        if (isset($_SESSION['carrinho'])){
+            $compras = new Carrinho();
+            $compras->buy();
+        }else {
+            header('Location: /home');
+        }
+        
+        
     }
 
 }

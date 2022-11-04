@@ -22,13 +22,11 @@
             </div>
             <div class="col-md-6">
                 <h3><?php echo $produtoDescricao->nome ?></h3>
-                <p class="preco">BC$ <?php echo $produtoDescricao->preco ?></p>
+                <p class="preco">BC <?php echo $produtoDescricao->preco ?></p>
                 <p><?php echo $produtoDescricao->descricao ?></p>
                 <hr>
                 <?php if(isset($_SESSION['logado'])):?>
-                <button class="btn" id="resgateDesc">
-                    <p>Resgatar</p>
-                </button>
+                    <a class="btn" id="resgateDesc" href="/carrinhos/adicionar/?adicionar=<?php echo $produto->id ?>">Resgate</a>
                 <?php else: ?>
                 <a href="/login" class="btn" id="resgateDesc">
                     <p>Resgatar</p>

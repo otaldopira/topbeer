@@ -47,9 +47,11 @@
             require_once('views/carrinho.view.php');
         }
 
-        public function sucesso($acao){
+        public function compra($acao){
             if($acao == 'sucesso')
                 require_once('views/sucesso.view.php');
-        }
+            else if ($acao == 'erro')
+                require_once('views/erro.view.php');
+        }   
 
     }
