@@ -1,14 +1,6 @@
-<h1>BeBumZao</h1>
-
 ### INSTALAÇÃO
 
-
-* LEMBRANDO QUE ESSES PASSO A PASSO É PARA QUEM USA **XAMPP** COMO SERVIDOR LOCAL E TEM **WINDOWS** COMO SISTEMA OPERACIONAL.
-
 * CASO NÃO TENHA O **COMPOSER** E O **XAMPP** INSTALADOS, POR FAVOR BAIXAR E INSTALAR ANTES PARA EVITAR ERRO.
-
-* INSTALAÇÃO DO **COMPOSER** E DO **XAMPP** É SIMPLES, ESTILO _NEXT_... _NEXT_... _FINISH_.
-
 
 **DOWNLOAD COMPOSER LINK**: ` https://getcomposer.org/Composer-Setup.exe`
 
@@ -53,17 +45,16 @@
 
 ### PARA RODAR O SISTEMA
 
-1. Faça o download dos arquivos.
-2. Extraia o pacote e copie para seu webserver.
-3. Rode o comando `composer install --no-dev` a partir da raiz do projeto.
-4. Rode o comando `php -S localhost:8080` a partir da raiz do projeto.
-5. Acesse a URL **http://localhost:8080/**.
-6. Configure o email de envio no arquivo email.php.
+1. Rode o comando `php -S localhost:8080` a partir da raiz do projeto.
+2. Acesse a URL **http://localhost:8080/**.
 
+## FUNCIONALIDADES FALTANTES
 
-
-OBSERVAÇÕES: Como ainda não foi utilizado o acesso a Banco de Dados, não é possível fazer
-a persistência dos dados. Foi utilizado o recurso de Matriz para simular alguns registros
-necessários (p.ex: o Administrador do sistema), mas não é possível gravar registros ainda.
-Foram gerados as interfaces para os cadastros (produtos, parceiros e usuários), mas não 
-haverá a possibilidades de gravá-los ou editá-los pela falta de acesso ao Banco de Dados.
+1. Ainda não foi implementado o relatório de compras do usuário.
+2. As lojas parceiras ainda não está pontuando as compras dos usuários. 
+Então quem faz o cadastro ganha 5000 BebumCoins, tem como o usuário administrador adicionar ou remover a quantidade desejada, no futuro com a API, vamos integrar os parceiros, simulando compras para o usuário receber BebumCoins.
+                                                                 
+### Grupo:
+Eric Gustavo Denkievicz                               
+Gabriel Jun Shibata                               
+Gláucio Ferreira de Araújo   
