@@ -2,7 +2,7 @@
     
     require ('layout/header.php');
 
-    if(isset($_SESSION['logado']) || $_SESSION == true){
+    if(isset($_SESSION['logado'])){
         header('Location: /produtos');
     }
 

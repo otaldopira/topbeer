@@ -23,7 +23,6 @@
             <h3>contato</h3>
             <a href="#">+55 429974-6845</a>
             <a href="#">topbeer@gmail.com</a>
-            <img src="images/payment.png" alt="">
         </div>
 
     </div>
@@ -31,6 +30,6 @@
 </section>
 
 <!-- Fim sessão rodapé -->
+
 </body>
-  
 </html>

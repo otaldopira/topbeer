@@ -1,5 +1,10 @@
 <?php 
   require('layout/header.php');
+
+  if(!$_SESSION['logado']) {
+    header('Location: /login');
+    exit();    
+  }
   $totalUn = 0;
 ?>
 

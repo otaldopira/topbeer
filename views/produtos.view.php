@@ -16,11 +16,12 @@
     <h1 class="heading"><span>produtos</span> </h1>
 
     <?php if (isset($resultProduto)) : ?>
+
         <div class="box-container">
             <?php foreach ($resultProduto as $produto) : ?>
                 <div class="box">
                     <div class="image">
-                        <img src="<?php echo $produto->imagem ?>" alt="">
+                        <img src="<?php echo $produto->imagem ?>" alt="seta">
                         <div class="icons">
                             <?php if (isset($_SESSION['logado'])) : ?>
                                 <a id="resgate" href="/carrinhos/adicionar/?adicionar=<?php echo $produto->id ?>" class="cart-btn">Resgatar</a>
@@ -37,10 +38,10 @@
                 </div>
             <?php endforeach; ?>
         </div>
+
     <?php endif; ?>
 
 </section>
-
 
 
 <!-- Fim sessão produtos -->

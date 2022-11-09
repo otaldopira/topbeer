@@ -26,9 +26,7 @@
                $query->bindParam(":nivelAutorizacao", $this->nivelAutorizacao);
                $query->execute();
 
-               session_start();
-               $_SESSION['sucesso'] = ['msn' => "USUÁRIO CADASTRADO COM SUCESSO !", 'count'=> 0];
-               header('Location: /usuario/cadastrar');
+               header('Location: /login');
           }
 
           public function list(){

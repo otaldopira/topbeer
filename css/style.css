@@ -262,17 +262,21 @@ th {
 }
 
 .products .box-container{
+    
     display: flex;
     flex-wrap: wrap;
     gap:1.5rem;
 }
 
 .products .box-container .box{
-    flex: 1;
-    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
-    border-radius: .5rem;
-    border:.1rem solid rgba(0,0,0,.1);
-    position: relative;    
+    flex-grow: 1;
+    display: flex;
+    box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 10%);
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgba(0,0,0,.1);
+    position: relative;
+    flex-direction: column;
+    align-items: center;
 }
 
 .products .box-container .box .discount{
@@ -287,6 +291,7 @@ th {
 }
 
 .products .box-container .box .image{
+    width: 100%;
     position: relative;
     text-align: center;
     padding-top: 2rem;
@@ -294,6 +299,7 @@ th {
 }
 
 .products .box-container .box .image img{
+
     height:25rem;
 }
 
@@ -301,17 +307,17 @@ th {
     transform: scale(1.1);
 }
 
-.products .box-container .box .image .icons{
+.products .box-container .box .icons{
     position: absolute;
     bottom:-7rem; left:0; right:0;
     display: flex;
 }
 
-.products .box-container .box:hover .image .icons{
+.products .box-container .box:hover .icons{
     bottom:0;
 }
 
-.products .box-container .box .image .icons a{
+.products .box-container .box .icons a{
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
@@ -414,12 +420,10 @@ th {
 
 
 .product .prod-row{
-    justify-content: center;
     box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
     border-radius: .5rem;
     padding:3rem 2rem;
     display: flex;
-    flex:1 1 30rem;  
 }
 
 .modal{
@@ -474,33 +478,38 @@ th {
 }
 
 .col-md-6 h3{
-    font-size: 4.5rem;
+    font-size: 3em;
     font-weight: 800;
 }
 
 .col-md-6 .preco{
-    font-size: 5rem;
+    color: green;
+    font-weight: 800;
+    font-size: 3em;
 
 }
 
 .col-md-6 p{
-    font-size: 1.8em;
+    font-size: 1.2em;
 
 }
 
 .col-md-6 .btn{
-    width: 100%;
-    font-size: 5em;
+    font-size: 2.2em;
     text-align: center;
     display: inline;
-
+    background-color: green;
 }
 
-.col-md-6 img{
-    overflow: hidden;
-    width: 350px;
-    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
-    border-radius: .5rem;
+.image{
+    max-width: 500px;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.image img{
+    height: 100%;
 }
 
 .register .row{

@@ -50,6 +50,13 @@
 
 ## FUNCIONALIDADES FALTANTES
 
+# Credenciais usuario ADM:
+
+`CPF: 012.345.678.90`
+`Senha: 12345678`
+
+## FUNCIONALIDADES FALTANTES
+
 1. Ainda não foi implementado o relatório de compras do usuário.
 2. As lojas parceiras ainda não está pontuando as compras dos usuários. 
 Então quem faz o cadastro ganha 5000 BebumCoins, tem como o usuário administrador adicionar ou remover a quantidade desejada, no futuro com a API, vamos integrar os parceiros, simulando compras para o usuário receber BebumCoins.

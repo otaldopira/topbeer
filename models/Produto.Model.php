@@ -23,7 +23,9 @@
             $query->bindParam(':imagem', $this->imagem);
             $query->execute();
 
-            header("Location: /listar");
+            session_start();
+            $_SESSION['sucesso'] = ['msn' => "PRODUTO CADASTRADO COM SUCESSO !", 'count'=> 0];
+            header("Location: /produto/cadastrar/");
         }
 
         public function list(){
