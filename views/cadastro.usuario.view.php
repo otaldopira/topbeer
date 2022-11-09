@@ -1,26 +1,23 @@
-<?php 
+<?php
 include 'layout/header.php';
 
-if(isset($_SESSION['erro'])){
-    //var_dump($_SESSION['erroPar']);
-    if($_SESSION['erro']['count'] === 0){
-        $msn = $_SESSION['erro']['msn'];
+if (isset($_SESSION['erro'])) {
+    if ($_SESSION['erro']['count'] === 0) {
+        $msnErro = $_SESSION['erro']['msn'];
         $_SESSION['erro']['count']++;
     } else {
-       unset($_SESSION['erro']);
+        unset($_SESSION['erro']);
     }
 }
 
-if(isset($_SESSION['sucesso'])){
-    if($_SESSION['sucesso']['count'] === 0){
-        $msn = $_SESSION['sucesso']['msn'];
+if (isset($_SESSION['sucesso'])) {
+    if ($_SESSION['sucesso']['count'] === 0) {
+        $msnSucesso = $_SESSION['sucesso']['msn'];
         $_SESSION['sucesso']['count']++;
     } else {
-       unset($_SESSION['sucesso']);
+        unset($_SESSION['sucesso']);
     }
 }
-
-
 ?>
 
 <section class="register" id="register">
@@ -37,18 +34,33 @@ if(isset($_SESSION['sucesso'])){
             <input type="text" placeholder="celular" id="telUs" class="box" name="celularUser">
             <input type="email" placeholder="e-mail" id="emailUs" class="box" name="emailUser">
             <input type="password" placeholder="senha" id="passUs" class="box" name="senhaUser">
-            <?php if (isset($_SESSION['nivelUser'])): ?>
-                <?php if ($_SESSION['nivelUser'] == '1'): ?>
+            <?php if (isset($_SESSION['nivelUser'])) : ?>
+                <?php if ($_SESSION['nivelUser'] == '1') : ?>
                     <input type="number" placeholder="bebum coins" name="bebumCoinsUser" class="box">
                     <label>ADM:<input type="checkbox" value="1" name="requisicao"></label>
-                <?php endif;?>
-            <?php endif;?>
+                <?php endif; ?>
+            <?php endif; ?>
             <div class="form-btn">
                 <input type="submit" value="Cadastrar" class="btn" name="submit">
             </div>
-            <?php if(isset($msn)):?>
-                    <p><?php echo $msn ?></p>        
-            <?php endif; ?>    
+            <?php if (isset($msnSucesso)) : ?>
+                <script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: '<?php echo $msnSucesso; ?>',
+                        showConfirmButton: false,
+                        timer: 2500
+                    })
+                </script>
+            <?php elseif (isset($msnErro)) : ?>
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erro !',
+                        text: '<?php echo $msnErro; ?>',
+                    })
+                </script>
+            <?php endif; ?>
         </form>
 
         <div class="image">
@@ -58,20 +70,20 @@ if(isset($_SESSION['sucesso'])){
     </div>
 </section>
 <script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.mask.js"></script>
-    <script>
-        $(document).ready(function(){
-            //Máscara CPF
-            $('#cpfUs').mask('000.000.000-00');
-            //Máscara celular
-            $('#telUs').mask('(00)0000-00009');
-            $('#telUs').blur(function(event) {
-                if ($(this).val().length == 14) { 
-                    $('#telUs').mask('(00)00000-0009');
-                } else {
-                    $('#telUs').mask('(00)0000-00009');
-                }
-            });
+<script type="text/javascript" src="../js/jquery.mask.js"></script>
+<script>
+    $(document).ready(function() {
+        //Máscara CPF
+        $('#cpfUs').mask('000.000.000-00');
+        //Máscara celular
+        $('#telUs').mask('(00)0000-00009');
+        $('#telUs').blur(function(event) {
+            if ($(this).val().length == 14) {
+                $('#telUs').mask('(00)00000-0009');
+            } else {
+                $('#telUs').mask('(00)0000-00009');
+            }
         });
-    </script>
-<?php include 'layout/footer.php';?>
+    });
+</script>
+<?php include 'layout/footer.php'; ?>

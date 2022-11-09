@@ -113,42 +113,42 @@
             if (!Validacao::validaCampoVazio($dados)){
                 session_start();
                 $_SESSION['erro'] = ['msn' => "PREENCHA TODOS OS CAMPOS !", 'count'=> 0];
-                header('Location: /produto/cadastrar');
+                header('Location: /listar');
                 exit();
             }
 
             if (!Validacao::validaCaracter($nome, $marca)){
                 session_start();    
                 $_SESSION['erro'] = ['msn' => "CARACTERES INDISPONÍVEIS !", 'count'=> 0];
-                header('Location: /produto/cadastrar');
+                header('Location: /listar');
                 exit();
             }
 
             if ($categoria === "categoria"){
                 session_start();    
                 $_SESSION['erro'] = ['msn' => "INSIRA A CATEGORIA !", 'count'=> 0];
-                header('Location: /produto/cadastrar');
+                header('Location: /listar');
                 exit();
             }
 
             if (!Validacao::validaQuantPreco($quantidade)){
                 session_start();    
                 $_SESSION['erro'] = ['msn' => "QUANTIDADE DEVE SER MAIOR QUE 0 !", 'count'=> 0];
-                header('Location: /produto/cadastrar');
+                header('Location: /listar');
                 exit();
             }
 
             if (!Validacao::validaQuantPreco($preco)){
                 session_start();    
                 $_SESSION['erro'] = ['msn' => "PREÇO DEVE SER MAIOR QUE 0 !", 'count'=> 0];
-                header('Location: /produto/cadastrar');
+                header('Location: /listar');
                 exit();
             }
 
             if (!Validacao::validaDescricao($descricao)){
                 session_start();    
                 $_SESSION['erro'] = ['msn' => "DESCRIÇÃO DEVE TER PELO MENOS 5 CARACTERES !", 'count'=> 0];
-                header('Location: /produto/cadastrar');
+                header('Location: /listar');
                 exit();
             }
 

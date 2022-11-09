@@ -14,7 +14,9 @@
             $query->execute();
 
             if($query->rowCount() == 0){
-                header('Location: /login/?erro=CPF ou senha inválidos!');
+                session_start();
+                $_SESSION['erro'] = ['msn' => "CPF OU SENHA INVÁLIDOS !", 'count'=> 0];
+                header('Location: /login');
                 return false;
             }else{ 
                 session_start();

@@ -1,13 +1,29 @@
 <?php require_once('layout/header.php'); ?>
 
-<?php if (isset($_SESSION['logado'])) : ?>
-    <div class="modal hidden" id="modal">
-        <div class="msn">
-            <p>Você resgatou seu produto !</p>
-            <button id="ok" class="btn">OK</button>
-        </div>
-    </div>
+<?php if (isset($_SESSION['logado'])) {
+
+    if (isset($_SESSION['sucesso'])) {
+        if ($_SESSION['sucesso']['count'] === 0) {
+            $msnSucesso = $_SESSION['sucesso']['msn'];
+            $_SESSION['sucesso']['count']++;
+        } else {
+            unset($_SESSION['sucesso']);
+        }
+    }
+}
+?>
+
+<?php if (isset($msnSucesso)) : ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '<?php echo $msnSucesso ?>',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    </script>
 <?php endif; ?>
+
 
 <!-- Sessão produtos  -->
 

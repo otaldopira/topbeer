@@ -90,35 +90,35 @@
             if (!Validacao::validaCampoVazio($dados)){
                 session_start();
                 $_SESSION['erro'] = ['msn' => "PREENCHA TODOS OS CAMPOS !", 'count'=> 0];
-                header('Location: /parceiro/cadastrar');
+                header('Location: /listar');
                 exit();
             }
 
             if (!Validacao::validaCaracter($razao, $fantasia)){
                 session_start();
                 $_SESSION['erro'] = ['msn' => "CARACTERES INDISPONÍVEIS !", 'count'=> 0];
-                header('Location: /parceiro/cadastrar');
+                header('Location: /listar');
                 exit();
             }
 
             if (!Validacao::validaCnpj($cnpj)){
                 session_start();
                 $_SESSION['erro'] = ['msn' => "CNPJ INVÁLIDO !", 'count'=> 0];
-                header('Location: /parceiro/cadastrar');
+                header('Location: /listar');
                 exit();
             }
 
             if (!Validacao::validaCelular($telefone)){
                 session_start();
                 $_SESSION['erro'] = ['msn' => "TELEFONE INVÁLIDO !", 'count'=> 0];
-                header('Location: /parceiro/cadastrar');
+                header('Location: /listar');
                 exit();
             }
 
             if (!Validacao::validaEmail($email)){
                 session_start();
                 $_SESSION['erro'] = ['msn' => "E-MAIL INVÁLIDO !", 'count'=> 0];
-                header('Location: /parceiro/cadastrar');
+                header('Location: /listar');
                 exit();
             }
     

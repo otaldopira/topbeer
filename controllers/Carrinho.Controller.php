@@ -15,6 +15,9 @@ class CarrinhoController
             } else {
                 $_SESSION['carrinho']["$resultado->id"]['quantidade'] += 1;
             }
+
+            session_start();
+            $_SESSION['sucesso'] = ['msn' => "PRODUTO ADICIONADO AO CARRINHO !", 'count' => 0];
             header('Location: /produtos');
 
         }

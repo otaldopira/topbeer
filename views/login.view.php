@@ -6,8 +6,13 @@
         header('Location: /produtos');
     }
 
-    if(isset($_GET['erro'])){
-        $msn = $_GET['erro'];
+    if (isset($_SESSION['erro'])) {
+        if ($_SESSION['erro']['count'] === 0) {
+            $msnErro = $_SESSION['erro']['msn'];
+            $_SESSION['erro']['count']++;
+        } else {
+            unset($_SESSION['erro']);
+        }
     }
 
 ?>
@@ -24,9 +29,15 @@
             <div class="form-btn">
                 <input type="submit" value="Entrar" class="btn" name="submit">
             </div>
-            <?php if(isset($msn)):?>
-                    <p><?php echo $msn ?></p>        
-            <?php endif; ?>       
+            <?php if (isset($msnErro)) : ?>
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erro !',
+                        text: '<?php echo $msnErro; ?>',
+                    })
+                </script>
+            <?php endif; ?>     
         </form>
 
     </div>

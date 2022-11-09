@@ -67,6 +67,8 @@
             
             $query->execute();
 
+            session_start();
+          $_SESSION['sucesso'] = ['msn' => "PARCEIRO ATUALIZADO COM SUCESSO !", 'count' => 0];
             header('Location: /listar');
         }
 

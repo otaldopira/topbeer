@@ -11,21 +11,21 @@
         exit();
     } 
     
-    if(isset($_SESSION['erro'])){
-        if($_SESSION['erro']['count'] === 0){
-            $msn = $_SESSION['erro']['msn'];
+    if (isset($_SESSION['erro'])) {
+        if ($_SESSION['erro']['count'] === 0) {
+            $msnErro = $_SESSION['erro']['msn'];
             $_SESSION['erro']['count']++;
         } else {
-           unset($_SESSION['erro']);
+            unset($_SESSION['erro']);
         }
     }
     
-    if(isset($_SESSION['sucesso'])){
-        if($_SESSION['sucesso']['count'] === 0){
-            $msn = $_SESSION['sucesso']['msn'];
+    if (isset($_SESSION['sucesso'])) {
+        if ($_SESSION['sucesso']['count'] === 0) {
+            $msnSucesso = $_SESSION['sucesso']['msn'];
             $_SESSION['sucesso']['count']++;
         } else {
-           unset($_SESSION['sucesso']);
+            unset($_SESSION['sucesso']);
         }
     }
 
@@ -57,8 +57,23 @@
                 <input type="reset" value="Limpar" class="btn">
             </div>
 
-            <?php if(isset($msn)):?>
-                    <p><?php echo $msn ?></p>
+            <?php if (isset($msnSucesso)) : ?>
+                <script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: '<?php echo $msnSucesso ?>',
+                        showConfirmButton: false,
+                        timer: 2500
+                    })
+                </script>
+            <?php elseif (isset($msnErro)) : ?>
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erro !',
+                        text: '<?php echo $msnErro; ?>',
+                    })
+                </script>
             <?php endif; ?>
 
         </form>

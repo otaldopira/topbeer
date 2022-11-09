@@ -99,41 +99,41 @@ class UsuarioController
         $nivel = isset($_POST['requisicao']) ? 1 : 0;
 
         $dados = ['$nome' => $nome, '$sobrenome' => $sobrenome , '$cpf' => $cpf, '$celular', '$senha' => $senha];
-
+        
         if (!Validacao::validaCampoVazio($dados)) {
             session_start();
             $_SESSION['erro'] = ['msn' => "PREENCHA TODOS OS CAMPOS !", 'count'=> 0];
-            header('Location: /usuario/cadastrar');
+            header('Location: /listar');
             exit();
         }
         if (!Validacao::validaCaracter($nome, $sobrenome)){
             session_start();
             $_SESSION['erro'] = ['msn' => "CARACTERES INDISPONÍVEIS !", 'count'=> 0];
-            header('Location: /usuario/cadastrar');
+            header('Location: /listar');
             exit();
         }
         if (!Validacao::validaCPF($cpf)){
             session_start();
             $_SESSION['erro'] = ['msn' => "CPF INVÁLIDO !", 'count'=> 0];
-            header('Location: /usuario/cadastrar');
+            header('Location: /listar');
             exit();
         }
         if (!Validacao::validaCelular($celular)){
             session_start();
             $_SESSION['erro'] = ['msn' => "NÚMERO DE CELULAR INVÁLIDO !", 'count'=> 0];
-            header('Location: /usuario/cadastrar');
+            header('Location: /listar');
             exit();
         }
         if (!Validacao::validaEmail($email)){
             session_start();
             $_SESSION['erro'] = ['msn' => "E-MAIL INVÁLIDO !", 'count'=> 0];
-            header('Location: /usuario/cadastrar');
+            header('Location: /listar');
             exit();
         }
         if (!Validacao::validaSenha($senha)){
             session_start();
             $_SESSION['erro'] = ['msn' => "SENHA DEVE TER PELO MENOS 8 CARACTERES !", 'count'=> 0];
-            header('Location: /usuario/cadastrar');
+            header('Location: /listar');
             exit();
         }
 

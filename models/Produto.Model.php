@@ -63,6 +63,8 @@
 
             $query->execute(); 
             
+            session_start();
+            $_SESSION['sucesso'] = ['msn' => "PRODUTO ATUALIZADO COM SUCESSO !", 'count'=> 0];
             header("Location: /listar");
         }
 

@@ -48,9 +48,7 @@
 1. Rode o comando `php -S localhost:8080` a partir da raiz do projeto.
 2. Acesse a URL **http://localhost:8080/**.
 
-## FUNCIONALIDADES FALTANTES
-
-# Credenciais usuario ADM:
+## Credenciais usuário ADM:
 
 `CPF: 012.345.678.90`
 `Senha: 12345678`

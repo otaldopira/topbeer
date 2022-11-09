@@ -5,13 +5,13 @@ class Validacao
 
     public static function validaCampoVazio($dados)
     {
-        foreach ($dados as $key => $dado) {
 
-            if (empty($dado)) {
-                return false;
-            }
-            return true;
+        foreach ($dados as $key => $value) {
+                if (empty($value)){
+                    return false;
+                }             
         }
+        return true;
     }
 
     public static function validaCaracter($nome, $sobrenome)
